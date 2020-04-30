@@ -1,0 +1,116 @@
+body {
+    background-image: url('images/banner.jpg');
+}
+
+
+/*.section {
+    //padding: 7rem 7rem 5rem 7rem;
+    -moz-align-self: center;
+    -webkit-align-self: center;
+    -ms-align-self: center;
+    align-self: center;
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+    -moz-flex-shrink: 1;
+    -webkit-flex-shrink: 1;
+    -ms-flex-shrink: 1;
+    flex-shrink: 1;
+    width: 50%;
+    max-width: 48rem;
+    margin: 0 auto;
+}*/
+
+.radius{
+    border: 2px solid;
+    border-radius: 8px;
+}
+
+.map {
+    width: 500px;
+    height: 300px;
+    &:extend(.radius);
+    top: 2%;
+    left: 1%;
+}
+
+.submitSystem {
+    right: 2%;
+    top: 2%;
+    //display: flex;
+    position: absolute;
+    line-height: 5px;
+    &:extend(.radius);
+    padding: 10px 10px 10px 10px;
+    background-color: bisque;
+}
+
+.text {
+    font-size: 10px;
+    position: relative;
+    left: 20%;
+}
+
+.input {
+    &:extend(.radius);
+    width: 80px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.input:hover {
+    transition-duration: 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.time {
+    &:extend(.radius);
+    width: 80px;
+    margin: 5px;
+    text-align: center;
+}
+
+.time:hover{
+    &:extend(.input:hover);
+}
+
+.button {
+    &:extend(.radius);
+    width: 90px;
+    height: 30px;
+    background-color: rgb(73, 172, 185);
+    border-color: black;
+    font-size: 10px;
+    margin: 2px;
+    padding: 5px;
+    position: relative;
+}
+
+.button:hover {
+    &:extend(.input:hover);
+    background-color: aqua;
+}
+
+.result {
+    line-height: 8px;
+    &:extend(.radius);
+    background-color: aquamarine;
+    border-color: black;
+    padding-right: 30%;
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+}
+
+.userspace {
+    position: absolute;
+    bottom: 2%;
+    right:2%;
+    &:extend(.radius);
+    padding: 1% 2% 1% 2%;
+    line-height: 25px;
+    background-color: blanchedalmond;
+}
+//.userspace-text{}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>travel</title>
+    <meta name="viewport" content="width=600">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <link rel="stylesheet/less" type="text/css" href="travel.less" />
+
+    <script src="less.min.js"></script>
+
+    <div id="map" class="map">
+
+    </div>
+
+    <div id="submitSystem" class="submitSystem">
+        <input type="text" v-model.trim="start_position" class="input" placeholder="出发"><br>
+        <input type="text" v-model.trim="destination" class="input" placeholder="终点"><br>
+        <span>开始时间</span><br>
+        <input type="time" v-model.trim="start_time" class="time" aria-placeholder="qi"><br>
+        <span>可选限定时间</span><br>
+        <input type="time" v-model.trim="limited_time" class="time"><br>
+        <button type="button" class="button" @click="submit">确认</button><br>
+        <button type="button" class="button" @click="deleteData">清除</button>
+    </div>
+
+    <div id="userspace">
+        <div class="timerController">
+            <button onclick="runTrip()" name="changeTrip">开始旅程</button><br>
+            <button onclick="stopTrip()" name="changeTrip" >暂停时间</button><br>
+            <button onclick="userclear()" @click="deleteData" name="changeTrip">清空</button>
+        </div>
+        <div class="userChange">
+            <input type="text" v-model="new_position" placeholder="更换的目的地" >
+            <input type="time" v-model="new_limit_time" placeholder="限定时间">
+            <button @click="changeTrip" name="changeTrip">改变行程</button>
+        </div>
+        <div class="userspace">
+            <span>当前时间:</span>
+            <input type="tel" class="input" v-model="current_time" readonly><br>
+            <span>用户当前位置:</span>
+            <input type="tel" class="input" v-model="current_position" readonly><br>
+            <span>用户已付费:</span>
+            <input type="tel" class="input" v-model="costs" readonly><br>
+            <span>用户剩余费用:</span>
+            <input type="tel" class="input" v-model="left_money"><br>
+            <span>行程序号:</span>
+            <input type="tel" class="input" v-model="vehicle_name" readonly><br>
+            <span>交通工具</span>
+            <input type="tel" class="input" v-model="vehicle" readonly>
+        </div>
+    </div>
+
+    <div id="result" class="result">
+        <div>
+            <button type="button" v-for="(each,index) in tabs" class="plan-tag" @click="choose_tab(index)">{{each}}</button>
+        </div>
+        <div>
+            <muti-tab v-bind:ptr="ptr" v-for="(ptr,index) in plan" v-show="index==display_num"></muti-tab>
+        </div>
+    </div>
+
+    <button type="button" id="stop" class="clearAll" onclick="clearAll()">清除所有数据</button>
+
+    <script>
+        //缩放为100%
+        document.getElementsByTagName('body')[0].style.zoom=1;
+    </script>
+
+    <script src="./Vue.js"></script> 
+
+    <script src="./cities_translate_cart.js"></script>
+
+    <script src="./timeSchedule.js"></script>
+
+    <script src="./travel.js"></script>
+
+    <script src="./AMap.js"></script>
+
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.13&key=a7a4229c8a99ea6f1ac46a4eee00285f&callback=init"></script>
+
+
+</body>
+
+</html>

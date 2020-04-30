@@ -1,0 +1,1022 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 675456 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=15060, tid=0x0000000000001860
+#
+# JRE version: OpenJDK Runtime Environment (8.0_201-b09) (build 1.8.0_201-2-redhat-b09)
+# Java VM: OpenJDK 64-Bit Server VM (25.201-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000001915c000):  JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=6240, stack(0x000000001a560000,0x000000001a660000)]
+
+Stack: [0x000000001a560000,0x000000001a660000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+Current CompileTask:
+C2:   3747 3102       4       org.eclipse.jdt.internal.core.JarPackageFragmentRoot::initRawPackageInfo (349 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001dd03000 JavaThread "Worker-3" [_thread_blocked, id=11724, stack(0x0000000020190000,0x0000000020290000)]
+  0x000000001bf82800 JavaThread "Worker-2" [_thread_blocked, id=8444, stack(0x0000000020090000,0x0000000020190000)]
+  0x000000001da7f000 JavaThread "pool-1-thread-1" [_thread_blocked, id=12668, stack(0x000000001fa30000,0x000000001fb30000)]
+  0x000000001b81c000 JavaThread "Java indexing" daemon [_thread_blocked, id=7568, stack(0x000000001d190000,0x000000001d290000)]
+  0x000000001b6eb000 JavaThread "Worker-1" [_thread_blocked, id=14304, stack(0x000000001cc90000,0x000000001cd90000)]
+  0x000000001b5af800 JavaThread "Worker-0: Initialize Workspace" [_thread_in_native, id=14760, stack(0x000000001cb90000,0x000000001cc90000)]
+  0x000000001b008800 JavaThread "Worker-JM" [_thread_blocked, id=5808, stack(0x000000001c690000,0x000000001c790000)]
+  0x000000001ade7000 JavaThread "Start Level: Equinox Container: 634c1f60-910d-464f-b4a6-7b913ea48b09" daemon [_thread_blocked, id=6720, stack(0x000000001c330000,0x000000001c430000)]
+  0x000000001b00b800 JavaThread "Framework Event Dispatcher: Equinox Container: 634c1f60-910d-464f-b4a6-7b913ea48b09" daemon [_thread_blocked, id=13948, stack(0x000000001c230000,0x000000001c330000)]
+  0x000000001acb5800 JavaThread "Active Thread: Equinox Container: 634c1f60-910d-464f-b4a6-7b913ea48b09" [_thread_blocked, id=3856, stack(0x000000001c130000,0x000000001c230000)]
+  0x000000001916e000 JavaThread "Service Thread" daemon [_thread_blocked, id=13524, stack(0x000000001a760000,0x000000001a860000)]
+  0x000000001915c800 JavaThread "C1 CompilerThread3" daemon [_thread_blocked, id=3680, stack(0x000000001a660000,0x000000001a760000)]
+=>0x000000001915c000 JavaThread "C2 CompilerThread2" daemon [_thread_in_native, id=6240, stack(0x000000001a560000,0x000000001a660000)]
+  0x000000001915b000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=2736, stack(0x000000001a360000,0x000000001a460000)]
+  0x000000001915a800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=14216, stack(0x000000001a260000,0x000000001a360000)]
+  0x000000001914c800 JavaThread "Attach Listener" daemon [_thread_blocked, id=15144, stack(0x000000001a160000,0x000000001a260000)]
+  0x000000001914b800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4896, stack(0x000000001a060000,0x000000001a160000)]
+  0x0000000019149000 JavaThread "Surrogate Locker Thread (Concurrent GC)" daemon [_thread_blocked, id=13252, stack(0x0000000019f60000,0x000000001a060000)]
+  0x00000000190c9000 JavaThread "Finalizer" daemon [_thread_blocked, id=11588, stack(0x0000000019e60000,0x0000000019f60000)]
+  0x00000000190c3000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5460, stack(0x0000000019d60000,0x0000000019e60000)]
+  0x0000000002a9e000 JavaThread "main" [_thread_blocked, id=15256, stack(0x0000000002aa0000,0x0000000002ba0000)]
+
+Other Threads:
+  0x00000000190ba800 VMThread [stack: 0x0000000019c60000,0x0000000019d60000] [id=700]
+  0x0000000019173800 WatcherThread [stack: 0x000000001a860000,0x000000001a960000] [id=3292]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ garbage-first heap   total 114688K, used 32758K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 13 young (13312K), 9 survivors (9216K)
+ Metaspace       used 34256K, capacity 36230K, committed 36508K, reserved 1081344K
+  class space    used 3616K, capacity 4299K, committed 4348K, reserved 1048576K
+
+Heap Regions: (Y=young(eden), SU=young(survivor), HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TS=gc time stamp, PTAMS=previous top-at-mark-start, NTAMS=next top-at-mark-start)
+AC   0  O    TS     0 PTAMS 0x00000000c0100000 NTAMS 0x00000000c0100000 space 1024K, 100% used [0x00000000c0000000, 0x00000000c0100000)
+AC   0  O    TS     0 PTAMS 0x00000000c0200000 NTAMS 0x00000000c0200000 space 1024K, 100% used [0x00000000c0100000, 0x00000000c0200000)
+AC   0  O    TS     0 PTAMS 0x00000000c0300000 NTAMS 0x00000000c0300000 space 1024K, 100% used [0x00000000c0200000, 0x00000000c0300000)
+AC   0  O    TS     0 PTAMS 0x00000000c0400000 NTAMS 0x00000000c0400000 space 1024K, 100% used [0x00000000c0300000, 0x00000000c0400000)
+AC   0  O    TS     0 PTAMS 0x00000000c0500000 NTAMS 0x00000000c0500000 space 1024K, 100% used [0x00000000c0400000, 0x00000000c0500000)
+AC   0  O    TS     0 PTAMS 0x00000000c0600000 NTAMS 0x00000000c0600000 space 1024K, 100% used [0x00000000c0500000, 0x00000000c0600000)
+AC   0  O    TS     0 PTAMS 0x00000000c0700000 NTAMS 0x00000000c0700000 space 1024K, 100% used [0x00000000c0600000, 0x00000000c0700000)
+AC   0  F    TS     0 PTAMS 0x00000000c0700000 NTAMS 0x00000000c0700000 space 1024K,   0% used [0x00000000c0700000, 0x00000000c0800000)
+AC   0  F    TS     0 PTAMS 0x00000000c0800000 NTAMS 0x00000000c0800000 space 1024K,   0% used [0x00000000c0800000, 0x00000000c0900000)
+AC   0  F    TS     0 PTAMS 0x00000000c0900000 NTAMS 0x00000000c0900000 space 1024K,   0% used [0x00000000c0900000, 0x00000000c0a00000)
+AC   0  F    TS     0 PTAMS 0x00000000c0a00000 NTAMS 0x00000000c0a00000 space 1024K,   0% used [0x00000000c0a00000, 0x00000000c0b00000)
+AC   0  F    TS     0 PTAMS 0x00000000c0b00000 NTAMS 0x00000000c0b00000 space 1024K,   0% used [0x00000000c0b00000, 0x00000000c0c00000)
+AC   0  F    TS     0 PTAMS 0x00000000c0c00000 NTAMS 0x00000000c0c00000 space 1024K,   0% used [0x00000000c0c00000, 0x00000000c0d00000)
+AC   0  O    TS     0 PTAMS 0x00000000c0e00000 NTAMS 0x00000000c0e00000 space 1024K, 100% used [0x00000000c0d00000, 0x00000000c0e00000)
+AC   0  O    TS     0 PTAMS 0x00000000c0f00000 NTAMS 0x00000000c0f00000 space 1024K, 100% used [0x00000000c0e00000, 0x00000000c0f00000)
+AC   0  O    TS     0 PTAMS 0x00000000c1000000 NTAMS 0x00000000c1000000 space 1024K, 100% used [0x00000000c0f00000, 0x00000000c1000000)
+AC   0  O    TS     0 PTAMS 0x00000000c1100000 NTAMS 0x00000000c1100000 space 1024K, 100% used [0x00000000c1000000, 0x00000000c1100000)
+AC   0  O    TS     0 PTAMS 0x00000000c1200000 NTAMS 0x00000000c1200000 space 1024K, 100% used [0x00000000c1100000, 0x00000000c1200000)
+AC   0  O    TS     0 PTAMS 0x00000000c1300000 NTAMS 0x00000000c1300000 space 1024K, 100% used [0x00000000c1200000, 0x00000000c1300000)
+AC   0  O    TS     0 PTAMS 0x00000000c1400000 NTAMS 0x00000000c1400000 space 1024K, 100% used [0x00000000c1300000, 0x00000000c1400000)
+AC   0  O    TS     0 PTAMS 0x00000000c1500000 NTAMS 0x00000000c1500000 space 1024K, 100% used [0x00000000c1400000, 0x00000000c1500000)
+AC   0  O    TS     0 PTAMS 0x00000000c1600000 NTAMS 0x00000000c1600000 space 1024K, 100% used [0x00000000c1500000, 0x00000000c1600000)
+AC   0  O    TS     0 PTAMS 0x00000000c1700000 NTAMS 0x00000000c1700000 space 1024K, 100% used [0x00000000c1600000, 0x00000000c1700000)
+AC   0  O    TS     0 PTAMS 0x00000000c1800000 NTAMS 0x00000000c1800000 space 1024K, 100% used [0x00000000c1700000, 0x00000000c1800000)
+AC   0  O    TS     0 PTAMS 0x00000000c1900000 NTAMS 0x00000000c1900000 space 1024K, 100% used [0x00000000c1800000, 0x00000000c1900000)
+AC   0  O    TS     0 PTAMS 0x00000000c19fda00 NTAMS 0x00000000c19fda00 space 1024K,  99% used [0x00000000c1900000, 0x00000000c1a00000)
+AC   0  F    TS     0 PTAMS 0x00000000c1a00000 NTAMS 0x00000000c1a00000 space 1024K,   0% used [0x00000000c1a00000, 0x00000000c1b00000)
+AC   0  F    TS     0 PTAMS 0x00000000c1b00000 NTAMS 0x00000000c1b00000 space 1024K,   0% used [0x00000000c1b00000, 0x00000000c1c00000)
+AC   0  F    TS     0 PTAMS 0x00000000c1c00000 NTAMS 0x00000000c1c00000 space 1024K,   0% used [0x00000000c1c00000, 0x00000000c1d00000)
+AC   0  F    TS     0 PTAMS 0x00000000c1d00000 NTAMS 0x00000000c1d00000 space 1024K,   0% used [0x00000000c1d00000, 0x00000000c1e00000)
+AC   0  F    TS     0 PTAMS 0x00000000c1e00000 NTAMS 0x00000000c1e00000 space 1024K,   0% used [0x00000000c1e00000, 0x00000000c1f00000)
+AC   0  F    TS     0 PTAMS 0x00000000c1f00000 NTAMS 0x00000000c1f00000 space 1024K,   0% used [0x00000000c1f00000, 0x00000000c2000000)
+AC   0  F    TS     0 PTAMS 0x00000000c2000000 NTAMS 0x00000000c2000000 space 1024K,   0% used [0x00000000c2000000, 0x00000000c2100000)
+AC   0  F    TS     0 PTAMS 0x00000000c2100000 NTAMS 0x00000000c2100000 space 1024K,   0% used [0x00000000c2100000, 0x00000000c2200000)
+AC   0  F    TS     0 PTAMS 0x00000000c2200000 NTAMS 0x00000000c2200000 space 1024K,   0% used [0x00000000c2200000, 0x00000000c2300000)
+AC   0  F    TS     0 PTAMS 0x00000000c2300000 NTAMS 0x00000000c2300000 space 1024K,   0% used [0x00000000c2300000, 0x00000000c2400000)
+AC   0  F    TS     0 PTAMS 0x00000000c2400000 NTAMS 0x00000000c2400000 space 1024K,   0% used [0x00000000c2400000, 0x00000000c2500000)
+AC   0  F    TS     0 PTAMS 0x00000000c2500000 NTAMS 0x00000000c2500000 space 1024K,   0% used [0x00000000c2500000, 0x00000000c2600000)
+AC   0  F    TS     0 PTAMS 0x00000000c2600000 NTAMS 0x00000000c2600000 space 1024K,   0% used [0x00000000c2600000, 0x00000000c2700000)
+AC   0  F    TS     0 PTAMS 0x00000000c2700000 NTAMS 0x00000000c2700000 space 1024K,   0% used [0x00000000c2700000, 0x00000000c2800000)
+AC   0  F    TS     0 PTAMS 0x00000000c2800000 NTAMS 0x00000000c2800000 space 1024K,   0% used [0x00000000c2800000, 0x00000000c2900000)
+AC   0  F    TS     0 PTAMS 0x00000000c2900000 NTAMS 0x00000000c2900000 space 1024K,   0% used [0x00000000c2900000, 0x00000000c2a00000)
+AC   0  F    TS     0 PTAMS 0x00000000c2a00000 NTAMS 0x00000000c2a00000 space 1024K,   0% used [0x00000000c2a00000, 0x00000000c2b00000)
+AC   0  F    TS     0 PTAMS 0x00000000c2b00000 NTAMS 0x00000000c2b00000 space 1024K,   0% used [0x00000000c2b00000, 0x00000000c2c00000)
+AC   0  F    TS     0 PTAMS 0x00000000c2c00000 NTAMS 0x00000000c2c00000 space 1024K,   0% used [0x00000000c2c00000, 0x00000000c2d00000)
+AC   0  S CS TS     0 PTAMS 0x00000000c2d00000 NTAMS 0x00000000c2d00000 space 1024K, 100% used [0x00000000c2d00000, 0x00000000c2e00000)
+AC   0  S CS TS     0 PTAMS 0x00000000c2e00000 NTAMS 0x00000000c2e00000 space 1024K, 100% used [0x00000000c2e00000, 0x00000000c2f00000)
+AC   0  S CS TS     0 PTAMS 0x00000000c2f00000 NTAMS 0x00000000c2f00000 space 1024K, 100% used [0x00000000c2f00000, 0x00000000c3000000)
+AC   0  S CS TS     0 PTAMS 0x00000000c3000000 NTAMS 0x00000000c3000000 space 1024K, 100% used [0x00000000c3000000, 0x00000000c3100000)
+AC   0  S CS TS     0 PTAMS 0x00000000c3100000 NTAMS 0x00000000c3100000 space 1024K, 100% used [0x00000000c3100000, 0x00000000c3200000)
+AC   0  S CS TS     0 PTAMS 0x00000000c3200000 NTAMS 0x00000000c3200000 space 1024K, 100% used [0x00000000c3200000, 0x00000000c3300000)
+AC   0  S CS TS     0 PTAMS 0x00000000c3300000 NTAMS 0x00000000c3300000 space 1024K, 100% used [0x00000000c3300000, 0x00000000c3400000)
+AC   0  S CS TS     0 PTAMS 0x00000000c3400000 NTAMS 0x00000000c3400000 space 1024K, 100% used [0x00000000c3400000, 0x00000000c3500000)
+AC   0  S CS TS     0 PTAMS 0x00000000c3500000 NTAMS 0x00000000c3500000 space 1024K, 100% used [0x00000000c3500000, 0x00000000c3600000)
+AC   0  F    TS     0 PTAMS 0x00000000c3600000 NTAMS 0x00000000c3600000 space 1024K,   0% used [0x00000000c3600000, 0x00000000c3700000)
+AC   0  F    TS     0 PTAMS 0x00000000c3700000 NTAMS 0x00000000c3700000 space 1024K,   0% used [0x00000000c3700000, 0x00000000c3800000)
+AC   0  F    TS     0 PTAMS 0x00000000c3800000 NTAMS 0x00000000c3800000 space 1024K,   0% used [0x00000000c3800000, 0x00000000c3900000)
+AC   0  F    TS     0 PTAMS 0x00000000c3900000 NTAMS 0x00000000c3900000 space 1024K,   0% used [0x00000000c3900000, 0x00000000c3a00000)
+AC   0  F    TS     0 PTAMS 0x00000000c3a00000 NTAMS 0x00000000c3a00000 space 1024K,   0% used [0x00000000c3a00000, 0x00000000c3b00000)
+AC   0  F    TS     0 PTAMS 0x00000000c3b00000 NTAMS 0x00000000c3b00000 space 1024K,   0% used [0x00000000c3b00000, 0x00000000c3c00000)
+AC   0  F    TS     0 PTAMS 0x00000000c3c00000 NTAMS 0x00000000c3c00000 space 1024K,   0% used [0x00000000c3c00000, 0x00000000c3d00000)
+AC   0  F    TS     0 PTAMS 0x00000000c3d00000 NTAMS 0x00000000c3d00000 space 1024K,   0% used [0x00000000c3d00000, 0x00000000c3e00000)
+AC   0  F    TS     0 PTAMS 0x00000000c3e00000 NTAMS 0x00000000c3e00000 space 1024K,   0% used [0x00000000c3e00000, 0x00000000c3f00000)
+AC   0  F    TS     0 PTAMS 0x00000000c3f00000 NTAMS 0x00000000c3f00000 space 1024K,   0% used [0x00000000c3f00000, 0x00000000c4000000)
+AC   0  F    TS     0 PTAMS 0x00000000c4000000 NTAMS 0x00000000c4000000 space 1024K,   0% used [0x00000000c4000000, 0x00000000c4100000)
+AC   0  F    TS     0 PTAMS 0x00000000c4100000 NTAMS 0x00000000c4100000 space 1024K,   0% used [0x00000000c4100000, 0x00000000c4200000)
+AC   0  F    TS     0 PTAMS 0x00000000c4200000 NTAMS 0x00000000c4200000 space 1024K,   0% used [0x00000000c4200000, 0x00000000c4300000)
+AC   0  F    TS     0 PTAMS 0x00000000c4300000 NTAMS 0x00000000c4300000 space 1024K,   0% used [0x00000000c4300000, 0x00000000c4400000)
+AC   0  F    TS     0 PTAMS 0x00000000c4400000 NTAMS 0x00000000c4400000 space 1024K,   0% used [0x00000000c4400000, 0x00000000c4500000)
+AC   0  F    TS     0 PTAMS 0x00000000c4500000 NTAMS 0x00000000c4500000 space 1024K,   0% used [0x00000000c4500000, 0x00000000c4600000)
+AC   0  F    TS     0 PTAMS 0x00000000c4600000 NTAMS 0x00000000c4600000 space 1024K,   0% used [0x00000000c4600000, 0x00000000c4700000)
+AC   0  F    TS     0 PTAMS 0x00000000c4700000 NTAMS 0x00000000c4700000 space 1024K,   0% used [0x00000000c4700000, 0x00000000c4800000)
+AC   0  F    TS     0 PTAMS 0x00000000c4800000 NTAMS 0x00000000c4800000 space 1024K,   0% used [0x00000000c4800000, 0x00000000c4900000)
+AC   0  F    TS     0 PTAMS 0x00000000c4900000 NTAMS 0x00000000c4900000 space 1024K,   0% used [0x00000000c4900000, 0x00000000c4a00000)
+AC   0  F    TS     0 PTAMS 0x00000000c4a00000 NTAMS 0x00000000c4a00000 space 1024K,   0% used [0x00000000c4a00000, 0x00000000c4b00000)
+AC   0  F    TS     0 PTAMS 0x00000000c4b00000 NTAMS 0x00000000c4b00000 space 1024K,   0% used [0x00000000c4b00000, 0x00000000c4c00000)
+AC   0  F    TS     0 PTAMS 0x00000000c4c00000 NTAMS 0x00000000c4c00000 space 1024K,   0% used [0x00000000c4c00000, 0x00000000c4d00000)
+AC   0  F    TS     0 PTAMS 0x00000000c4d00000 NTAMS 0x00000000c4d00000 space 1024K,   0% used [0x00000000c4d00000, 0x00000000c4e00000)
+AC   0  F    TS     0 PTAMS 0x00000000c4e00000 NTAMS 0x00000000c4e00000 space 1024K,   0% used [0x00000000c4e00000, 0x00000000c4f00000)
+AC   0  F    TS     0 PTAMS 0x00000000c4f00000 NTAMS 0x00000000c4f00000 space 1024K,   0% used [0x00000000c4f00000, 0x00000000c5000000)
+AC   0  F    TS     0 PTAMS 0x00000000c5000000 NTAMS 0x00000000c5000000 space 1024K,   0% used [0x00000000c5000000, 0x00000000c5100000)
+AC   0  F    TS     0 PTAMS 0x00000000c5100000 NTAMS 0x00000000c5100000 space 1024K,   0% used [0x00000000c5100000, 0x00000000c5200000)
+AC   0  F    TS     0 PTAMS 0x00000000c5200000 NTAMS 0x00000000c5200000 space 1024K,   0% used [0x00000000c5200000, 0x00000000c5300000)
+AC   0  F    TS     0 PTAMS 0x00000000c5300000 NTAMS 0x00000000c5300000 space 1024K,   0% used [0x00000000c5300000, 0x00000000c5400000)
+AC   0  F    TS     0 PTAMS 0x00000000c5400000 NTAMS 0x00000000c5400000 space 1024K,   0% used [0x00000000c5400000, 0x00000000c5500000)
+AC   0  F    TS     0 PTAMS 0x00000000c5500000 NTAMS 0x00000000c5500000 space 1024K,   0% used [0x00000000c5500000, 0x00000000c5600000)
+AC   0  F    TS     0 PTAMS 0x00000000c5600000 NTAMS 0x00000000c5600000 space 1024K,   0% used [0x00000000c5600000, 0x00000000c5700000)
+AC   0  F    TS     0 PTAMS 0x00000000c5700000 NTAMS 0x00000000c5700000 space 1024K,   0% used [0x00000000c5700000, 0x00000000c5800000)
+AC   0  F    TS     0 PTAMS 0x00000000c5800000 NTAMS 0x00000000c5800000 space 1024K,   0% used [0x00000000c5800000, 0x00000000c5900000)
+AC   0  F    TS     0 PTAMS 0x00000000c5900000 NTAMS 0x00000000c5900000 space 1024K,   0% used [0x00000000c5900000, 0x00000000c5a00000)
+AC   0  F    TS     0 PTAMS 0x00000000c5a00000 NTAMS 0x00000000c5a00000 space 1024K,   0% used [0x00000000c5a00000, 0x00000000c5b00000)
+AC   0  F    TS     0 PTAMS 0x00000000c5b00000 NTAMS 0x00000000c5b00000 space 1024K,   0% used [0x00000000c5b00000, 0x00000000c5c00000)
+AC   0  F    TS     0 PTAMS 0x00000000c5c00000 NTAMS 0x00000000c5c00000 space 1024K,   0% used [0x00000000c5c00000, 0x00000000c5d00000)
+AC   0  F    TS     0 PTAMS 0x00000000c5d00000 NTAMS 0x00000000c5d00000 space 1024K,   0% used [0x00000000c5d00000, 0x00000000c5e00000)
+AC   0  F    TS     0 PTAMS 0x00000000c5e00000 NTAMS 0x00000000c5e00000 space 1024K,   0% used [0x00000000c5e00000, 0x00000000c5f00000)
+AC   0  F    TS     0 PTAMS 0x00000000c5f00000 NTAMS 0x00000000c5f00000 space 1024K,   0% used [0x00000000c5f00000, 0x00000000c6000000)
+AC   0  F    TS     0 PTAMS 0x00000000c6000000 NTAMS 0x00000000c6000000 space 1024K,   0% used [0x00000000c6000000, 0x00000000c6100000)
+AC   0  F    TS     0 PTAMS 0x00000000c6100000 NTAMS 0x00000000c6100000 space 1024K,   0% used [0x00000000c6100000, 0x00000000c6200000)
+AC   0  F    TS     0 PTAMS 0x00000000c6200000 NTAMS 0x00000000c6200000 space 1024K,   0% used [0x00000000c6200000, 0x00000000c6300000)
+AC   0  F    TS     0 PTAMS 0x00000000c6300000 NTAMS 0x00000000c6300000 space 1024K,   0% used [0x00000000c6300000, 0x00000000c6400000)
+AC   0  F    TS     0 PTAMS 0x00000000c6400000 NTAMS 0x00000000c6400000 space 1024K,   0% used [0x00000000c6400000, 0x00000000c6500000)
+AC   0  F    TS     0 PTAMS 0x00000000c6500000 NTAMS 0x00000000c6500000 space 1024K,   0% used [0x00000000c6500000, 0x00000000c6600000)
+AC   0  F    TS     0 PTAMS 0x00000000c6600000 NTAMS 0x00000000c6600000 space 1024K,   0% used [0x00000000c6600000, 0x00000000c6700000)
+AC   0  F    TS     0 PTAMS 0x00000000c6700000 NTAMS 0x00000000c6700000 space 1024K,   0% used [0x00000000c6700000, 0x00000000c6800000)
+AC   0  F    TS     0 PTAMS 0x00000000c6800000 NTAMS 0x00000000c6800000 space 1024K,   0% used [0x00000000c6800000, 0x00000000c6900000)
+AC   0  F    TS     0 PTAMS 0x00000000c6900000 NTAMS 0x00000000c6900000 space 1024K,   0% used [0x00000000c6900000, 0x00000000c6a00000)
+AC   0  F    TS     0 PTAMS 0x00000000c6a00000 NTAMS 0x00000000c6a00000 space 1024K,   0% used [0x00000000c6a00000, 0x00000000c6b00000)
+AC   0  F    TS     0 PTAMS 0x00000000c6b00000 NTAMS 0x00000000c6b00000 space 1024K,   0% used [0x00000000c6b00000, 0x00000000c6c00000)
+AC   0  E    TS     0 PTAMS 0x00000000c6c00000 NTAMS 0x00000000c6c00000 space 1024K,  30% used [0x00000000c6c00000, 0x00000000c6d00000)
+AC   0  E CS TS     0 PTAMS 0x00000000c6d00000 NTAMS 0x00000000c6d00000 space 1024K, 100% used [0x00000000c6d00000, 0x00000000c6e00000)
+AC   0  E CS TS     0 PTAMS 0x00000000c6e00000 NTAMS 0x00000000c6e00000 space 1024K, 100% used [0x00000000c6e00000, 0x00000000c6f00000)
+AC   0  E CS TS     0 PTAMS 0x00000000c6f00000 NTAMS 0x00000000c6f00000 space 1024K, 100% used [0x00000000c6f00000, 0x00000000c7000000)
+
+Card table byte_map: [0x0000000013de0000,0x0000000013fe0000] byte_map_base: 0x00000000137e0000
+
+Marking Bits (Prev, Next): (CMBitMap*) 0x0000000002c73ea8, (CMBitMap*) 0x0000000002c73f00
+ Prev Bits: [0x00000000141e0000, 0x00000000151e0000)
+ Next Bits: [0x00000000151e0000, 0x00000000161e0000)
+
+Polling page: 0x0000000000d10000
+
+CodeCache: size=245760Kb used=11323Kb max_used=11489Kb free=234436Kb
+ bounds [0x0000000002ca0000, 0x00000000037f0000, 0x0000000011ca0000]
+ total_blobs=3733 nmethods=3242 adapters=405
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 3.504 Thread 0x000000001915c800 3196   !   2       org.eclipse.jdt.internal.core.Openable::generateInfos (281 bytes)
+Event: 3.509 Thread 0x000000001915c800 nmethod 3196 0x0000000003775790 code [0x0000000003775aa0, 0x0000000003776808]
+Event: 3.509 Thread 0x000000001915c800 3197       2       org.eclipse.jdt.internal.core.Openable::openAncestors (30 bytes)
+Event: 3.510 Thread 0x000000001915c800 nmethod 3197 0x0000000003777390 code [0x0000000003777520, 0x00000000037777c8]
+Event: 3.510 Thread 0x000000001915c800 3198       2       org.eclipse.jdt.internal.core.JavaElement::getOpenableParent (8 bytes)
+Event: 3.510 Thread 0x000000001915c800 nmethod 3198 0x0000000003777990 code [0x0000000003777ae0, 0x0000000003777c70]
+Event: 3.510 Thread 0x000000001915c800 3199       2       org.eclipse.jdt.internal.core.OpenableElementInfo::setChildren (17 bytes)
+Event: 3.510 Thread 0x000000001915c800 nmethod 3199 0x0000000003777d10 code [0x0000000003777e60, 0x0000000003778010]
+Event: 3.510 Thread 0x000000001915c800 3200       2       org.eclipse.jdt.internal.core.OpenableElementInfo::setIsStructureKnown (6 bytes)
+Event: 3.510 Thread 0x000000001915c800 nmethod 3200 0x00000000037780d0 code [0x0000000003778220, 0x0000000003778370]
+Event: 3.510 Thread 0x000000001915c800 3214       2       org.eclipse.jdt.internal.core.JavaModelCache::peekAtInfo (135 bytes)
+Event: 3.511 Thread 0x000000001915c800 nmethod 3214 0x0000000003778410 code [0x0000000003778620, 0x0000000003778c38]
+Event: 3.511 Thread 0x000000001915c800 3218   !   2       org.eclipse.jdt.internal.core.JavaModelManager::closeChildren (51 bytes)
+Event: 3.511 Thread 0x000000001915c800 nmethod 3218 0x0000000003779090 code [0x0000000003779220, 0x0000000003779518]
+Event: 3.511 Thread 0x000000001915c800 3210       2       org.eclipse.jdt.internal.core.util.LRUCache::peek (23 bytes)
+Event: 3.511 Thread 0x000000001915c800 nmethod 3210 0x00000000037796d0 code [0x0000000003779840, 0x0000000003779a28]
+Event: 3.511 Thread 0x000000001915c800 3211       2       java.util.stream.ReferencePipeline$2$1::accept (27 bytes)
+Event: 3.512 Thread 0x000000001915c800 nmethod 3211 0x0000000003779b10 code [0x0000000003779c80, 0x0000000003779e58]
+Event: 3.512 Thread 0x000000001915c800 3203   !   2       org.eclipse.jdt.ls.core.internal.managers.ProjectsManager::lambda$0 (58 bytes)
+Event: 3.513 Thread 0x000000001915c800 nmethod 3203 0x0000000003779f50 code [0x000000000377a1c0, 0x000000000377aae8]
+Event: 3.513 Thread 0x000000001915c800 3212   !   2       org.eclipse.jdt.internal.core.PackageFragment::validateExistence (64 bytes)
+Event: 3.514 Thread 0x000000001915c800 nmethod 3212 0x000000000377b590 code [0x000000000377b7a0, 0x000000000377c068]
+Event: 3.514 Thread 0x000000001915c800 3213       2       org.eclipse.jdt.internal.core.PackageFragmentInfo::containsJavaResources (12 bytes)
+Event: 3.514 Thread 0x000000001915c800 nmethod 3213 0x000000000377c610 code [0x000000000377c760, 0x000000000377c8d0]
+Event: 3.514 Thread 0x000000001915c800 3215       2       org.eclipse.jdt.internal.core.JarPackageFragment::containsJavaResources (11 bytes)
+Event: 3.515 Thread 0x000000001915c800 nmethod 3215 0x000000000377c990 code [0x000000000377cb20, 0x000000000377ce18]
+Event: 3.515 Thread 0x000000001915c800 3216       2       org.eclipse.jdt.internal.core.JarPackageFragment::createElementInfo (8 bytes)
+Event: 3.515 Thread 0x000000001915c800 nmethod 3216 0x000000000377d010 code [0x000000000377d160, 0x000000000377d370]
+Event: 3.515 Thread 0x000000001915c800 3217       2       org.eclipse.jdt.internal.core.JarPackageFragmentInfo::<init> (5 bytes)
+Event: 3.515 Thread 0x000000001915c800 nmethod 3217 0x000000000377d410 code [0x000000000377d560, 0x000000000377d730]
+Event: 3.515 Thread 0x000000001915c800 3220       2       org.eclipse.jdt.internal.core.JarPackageFragment::buildStructure (90 bytes)
+Event: 3.517 Thread 0x000000001915c800 nmethod 3220 0x000000000377d7d0 code [0x000000000377d9e0, 0x000000000377e1a8]
+Event: 3.517 Thread 0x000000001915c800 3222       2       org.eclipse.jdt.internal.core.OpenableElementInfo::setNonJavaResources (6 bytes)
+Event: 3.517 Thread 0x000000001915c800 nmethod 3222 0x000000000377ea10 code [0x000000000377eb60, 0x000000000377ecf0]
+Event: 3.517 Thread 0x000000001915c800 3205       2       org.eclipse.jdt.internal.core.JavaModelManager::hasTemporaryCache (14 bytes)
+Event: 3.517 Thread 0x000000001915c800 nmethod 3205 0x000000000377ed90 code [0x000000000377ef00, 0x000000000377f0a8]
+Event: 3.518 Thread 0x000000001915c800 3223       1       org.eclipse.osgi.internal.loader.classpath.ClasspathManager::getFragmentClasspaths (5 bytes)
+Event: 3.518 Thread 0x000000001915c800 nmethod 3223 0x000000000377f190 code [0x000000000377f2e0, 0x000000000377f3f0]
+Event: 3.526 Thread 0x000000001915c800 3225       2       java.lang.String::codePointAt (36 bytes)
+Event: 3.526 Thread 0x000000001915c800 nmethod 3225 0x000000000377f450 code [0x000000000377f5c0, 0x000000000377f798]
+Event: 3.526 Thread 0x000000001915c800 3228       2       java.util.regex.Matcher::match (109 bytes)
+Event: 3.527 Thread 0x000000001915c800 nmethod 3228 0x000000000377f8d0 code [0x000000000377fa40, 0x000000000377fca8]
+Event: 3.527 Thread 0x000000001915c800 3226       2       java.util.regex.Pattern$SliceU::match (99 bytes)
+Event: 3.527 Thread 0x000000001915c800 nmethod 3226 0x000000000377fdd0 code [0x000000000377ff80, 0x00000000037802f8]
+Event: 3.527 Thread 0x000000001915c800 3227       2       java.util.regex.Pattern$Node::<init> (12 bytes)
+Event: 3.527 Thread 0x000000001915c800 nmethod 3227 0x0000000003780590 code [0x00000000037806e0, 0x0000000003780890]
+Event: 3.530 Thread 0x000000001915c800 3229       2       java.util.regex.Pattern::append (39 bytes)
+Event: 3.530 Thread 0x000000001915c800 nmethod 3229 0x0000000003780910 code [0x0000000003780a80, 0x0000000003780da8]
+Event: 3.531 Thread 0x000000001915c800 3230       2       sun.nio.fs.NativeBuffers::releaseNativeBuffer (103 bytes)
+Event: 3.533 Thread 0x000000001915c800 nmethod 3230 0x0000000003780f10 code [0x0000000003781180, 0x0000000003781ad8]
+Event: 3.533 Thread 0x000000001915c800 3231       2       sun.nio.fs.Globs::isRegexMeta (16 bytes)
+Event: 3.533 Thread 0x000000001915c800 nmethod 3231 0x00000000037822d0 code [0x0000000003782440, 0x00000000037825c8]
+Event: 3.533 Thread 0x000000001915c800 3232       2       sun.nio.fs.WindowsDirectoryStream$WindowsDirectoryIterator::isSelfOrParent (24 bytes)
+Event: 3.533 Thread 0x000000001915c800 nmethod 3232 0x0000000003782650 code [0x00000000037827c0, 0x0000000003782998]
+Event: 3.533 Thread 0x000000001915c800 3233       2       java.util.regex.Pattern::closure (477 bytes)
+Event: 3.537 Thread 0x000000001915c800 nmethod 3233 0x0000000003782a90 code [0x0000000003782e20, 0x0000000003784ac8]
+Event: 3.537 Thread 0x000000001915c800 3236       1       sun.nio.fs.NativeBuffer::address (5 bytes)
+Event: 3.537 Thread 0x000000001915c800 nmethod 3236 0x0000000003785ed0 code [0x0000000003786020, 0x0000000003786130]
+Event: 3.537 Thread 0x000000001915c800 3234   !   2       sun.nio.fs.WindowsNativeDispatcher::FindFirstFile (39 bytes)
+Event: 3.538 Thread 0x000000001915c800 nmethod 3234 0x0000000003786190 code [0x0000000003786320, 0x0000000003786578]
+Event: 3.538 Thread 0x000000001915c800 3235       2       sun.nio.fs.WindowsNativeDispatcher$FirstFile::<init> (5 bytes)
+Event: 3.538 Thread 0x000000001915c800 nmethod 3235 0x0000000003786750 code [0x00000000037868a0, 0x00000000037869f0]
+Event: 3.538 Thread 0x000000001915c800 3237       2       java.util.regex.Pattern::nextEscaped (19 bytes)
+Event: 3.538 Thread 0x000000001915c800 nmethod 3237 0x0000000003786a90 code [0x0000000003786be0, 0x0000000003786d50]
+Event: 3.539 Thread 0x000000001915c800 3238       2       sun.nio.fs.WindowsFileAttributes::isReparsePoint (14 bytes)
+Event: 3.539 Thread 0x000000001915c800 nmethod 3238 0x0000000003786e50 code [0x0000000003786fa0, 0x00000000037870f0]
+Event: 3.539 Thread 0x000000001915c800 3239       2       sun.nio.fs.WindowsFileAttributes::<init> (57 bytes)
+Event: 3.540 Thread 0x000000001915c800 nmethod 3239 0x0000000003787150 code [0x00000000037872a0, 0x0000000003787430]
+Event: 3.554 Thread 0x000000001915c800 3241       2       sun.nio.fs.WindowsFileAttributes::isSymbolicLink (15 bytes)
+Event: 3.554 Thread 0x000000001915c800 nmethod 3241 0x0000000003787850 code [0x00000000037879a0, 0x0000000003787b10]
+Event: 3.557 Thread 0x000000001915c800 3242       2       java.util.regex.Pattern$CharProperty::<init> (5 bytes)
+Event: 3.558 Thread 0x000000001915c800 nmethod 3242 0x0000000003787b90 code [0x0000000003787ce0, 0x0000000003787e90]
+Event: 3.558 Thread 0x000000001915c800 3243       2       java.util.regex.Pattern$CharProperty::<init> (5 bytes)
+Event: 3.558 Thread 0x000000001915c800 nmethod 3243 0x0000000003787f10 code [0x0000000003788060, 0x0000000003788210]
+Event: 3.573 Thread 0x000000001915c800 3244  s    2       java.io.ExpiringCache::put (70 bytes)
+Event: 3.574 Thread 0x000000001915c800 nmethod 3244 0x0000000003788290 code [0x0000000003788420, 0x0000000003788908]
+Event: 3.574 Thread 0x000000001915c800 3245       2       java.io.ExpiringCache$Entry::<init> (15 bytes)
+Event: 3.574 Thread 0x000000001915c800 nmethod 3245 0x0000000003788a90 code [0x0000000003788be0, 0x0000000003788d90]
+Event: 3.583 Thread 0x000000001915c800 3246       2       java.util.regex.Pattern::compile (406 bytes)
+Event: 3.585 Thread 0x000000001915c800 nmethod 3246 0x0000000003788e10 code [0x00000000037890c0, 0x000000000378a328]
+Event: 3.585 Thread 0x000000001915c800 3247       2       java.util.regex.Pattern::unread (11 bytes)
+Event: 3.585 Thread 0x000000001915c800 nmethod 3247 0x000000000378aad0 code [0x000000000378ac20, 0x000000000378ad70]
+Event: 3.585 Thread 0x000000001915c800 3248       2       java.util.regex.Pattern::escape (1151 bytes)
+Event: 3.591 Thread 0x000000001915c800 nmethod 3248 0x000000000378c2d0 code [0x000000000378c8e0, 0x000000000378fc38]
+Event: 3.591 Thread 0x000000001915c800 3249       1       java.nio.file.FileTreeWalker$Event::type (5 bytes)
+Event: 3.592 Thread 0x000000001915c800 nmethod 3249 0x0000000003791810 code [0x0000000003791960, 0x0000000003791a70]
+Event: 3.592 Thread 0x000000001915c800 3250       1       java.nio.file.FileTreeWalker$Event::file (5 bytes)
+Event: 3.592 Thread 0x000000001915c800 nmethod 3250 0x0000000003791ad0 code [0x0000000003791c20, 0x0000000003791d30]
+Event: 3.592 Thread 0x000000001915c800 3251       1       java.nio.file.FileTreeWalker$DirectoryNode::skipped (5 bytes)
+Event: 3.592 Thread 0x000000001915c800 nmethod 3251 0x0000000003791d90 code [0x0000000003791ee0, 0x0000000003791ff0]
+Event: 3.592 Thread 0x000000001915c800 3252       1       java.nio.file.FileTreeWalker$DirectoryNode::iterator (5 bytes)
+Event: 3.592 Thread 0x000000001915c800 nmethod 3252 0x0000000003792050 code [0x00000000037921a0, 0x00000000037922b0]
+Event: 3.592 Thread 0x000000001915c800 3253       1       java.nio.file.FileTreeWalker$Event::attributes (5 bytes)
+Event: 3.592 Thread 0x000000001915c800 nmethod 3253 0x0000000003792310 code [0x0000000003792460, 0x0000000003792570]
+Event: 3.592 Thread 0x000000001915c800 3256   !   2       sun.nio.fs.WindowsDirectoryStream$WindowsDirectoryIterator::readNextEntry (192 bytes)
+Event: 3.594 Thread 0x000000001915c800 nmethod 3256 0x00000000037925d0 code [0x0000000003792800, 0x0000000003793038]
+Event: 3.594 Thread 0x000000001915c800 3255  s    2       sun.nio.fs.WindowsDirectoryStream$WindowsDirectoryIterator::hasNext (35 bytes)
+Event: 3.594 Thread 0x000000001915c800 nmethod 3255 0x0000000003793890 code [0x0000000003793a00, 0x0000000003793d68]
+Event: 3.594 Thread 0x000000001915c800 3254       1       java.nio.file.FileTreeWalker$Event::ioeException (5 bytes)
+Event: 3.594 Thread 0x000000001915c800 nmethod 3254 0x0000000003793e50 code [0x0000000003793fa0, 0x00000000037940b0]
+Event: 3.602 Thread 0x000000001915c800 3257       1       sun.nio.fs.WindowsFileSystem::provider (5 bytes)
+Event: 3.602 Thread 0x000000001915c800 nmethod 3257 0x00000000037aa8d0 code [0x00000000037aaa20, 0x00000000037aab30]
+Event: 3.603 Thread 0x000000001915c800 3258       2       java.nio.file.Files$AcceptAllFilter::accept (9 bytes)
+Event: 3.603 Thread 0x000000001915c800 nmethod 3258 0x00000000037aab90 code [0x00000000037aace0, 0x00000000037aae90]
+Event: 3.603 Thread 0x000000001915c800 3259       2       sun.nio.fs.WindowsDirectoryStream$WindowsDirectoryIterator::next (5 bytes)
+Event: 3.603 Thread 0x000000001915c800 nmethod 3259 0x00000000037aaf10 code [0x00000000037ab080, 0x00000000037ab1e8]
+Event: 3.603 Thread 0x000000001915c800 3260  s    2       sun.nio.fs.WindowsDirectoryStream$WindowsDirectoryIterator::next (48 bytes)
+Event: 3.603 Thread 0x000000001915c800 nmethod 3260 0x00000000037ab290 code [0x00000000037ab400, 0x00000000037ab798]
+Event: 3.607 Thread 0x000000001915c800 3261       2       sun.nio.fs.WindowsPath::isAbsolute (26 bytes)
+Event: 3.607 Thread 0x000000001915c800 nmethod 3261 0x00000000037ab8d0 code [0x00000000037aba20, 0x00000000037abbb0]
+Event: 3.608 Thread 0x000000001915c800 3262       2       sun.nio.fs.WindowsPathParser::nextNonSlash (24 bytes)
+Event: 3.608 Thread 0x000000001915c800 nmethod 3262 0x00000000037abc10 code [0x00000000037abd80, 0x00000000037ac008]
+Event: 3.609 Thread 0x000000001915c800 3263       2       sun.nio.fs.Globs::toRegexPattern (745 bytes)
+Event: 3.611 Thread 0x000000001915a800 nmethod 2990 0x00000000037ac1d0 code [0x00000000037ac780, 0x00000000037b3c40]
+Event: 3.612 Thread 0x000000001915a800 3106       4       org.eclipse.jdt.internal.core.util.HashtableOfArrayToObject::get (69 bytes)
+Event: 3.618 Thread 0x000000001915c800 nmethod 3263 0x00000000037a3ad0 code [0x00000000037a40e0, 0x00000000037a72f8]
+Event: 3.618 Thread 0x000000001915b000 nmethod 2807 0x00000000037ba890 code [0x00000000037bafc0, 0x00000000037c59b0]
+Event: 3.618 Thread 0x000000001915c800 3266       2       com.sun.org.apache.xerces.internal.utils.XMLSecurityManager::isOverLimit (111 bytes)
+Event: 3.619 Thread 0x000000001915b000 3267       4       java.util.HashSet::contains (9 bytes)
+Event: 3.620 Thread 0x000000001915c800 nmethod 3266 0x000000000378ba10 code [0x000000000378bba0, 0x000000000378be90]
+Event: 3.620 Thread 0x000000001915c800 3264       2       java.util.regex.Pattern$Dot::<init> (6 bytes)
+Event: 3.620 Thread 0x000000001915c800 nmethod 3264 0x000000000378b690 code [0x000000000378b7e0, 0x000000000378b990]
+Event: 3.620 Thread 0x000000001915c800 3265       1       sun.util.calendar.CalendarDate::getYear (5 bytes)
+Event: 3.620 Thread 0x000000001915c800 nmethod 3265 0x000000000378b3d0 code [0x000000000378b520, 0x000000000378b630]
+Event: 3.625 Thread 0x000000001915c800 3268       2       sun.nio.fs.WindowsPath::addPrefixIfNeeded (72 bytes)
+Event: 3.626 Thread 0x000000001915c800 nmethod 3268 0x000000000379fd90 code [0x000000000379ff60, 0x00000000037a0558]
+Event: 3.626 Thread 0x000000001915a800 nmethod 3106 0x000000000379f0d0 code [0x000000000379f240, 0x000000000379f858]
+Event: 3.626 Thread 0x000000001915a800 3224       4       java.lang.Character::toUpperCase (9 bytes)
+Event: 3.627 Thread 0x000000001915a800 nmethod 3224 0x00000000037a0ad0 code [0x00000000037a0c00, 0x00000000037a0cd8]
+Event: 3.628 Thread 0x000000001915a800 3095       4       java.util.zip.ZipCoder::toString (190 bytes)
+Event: 3.628 Thread 0x000000001915b000 nmethod 3267 0x00000000037a1050 code [0x00000000037a11e0, 0x00000000037a1778]
+Event: 3.628 Thread 0x000000001915b000 3096       4       java.util.zip.ZipFile::getZipEntry (251 bytes)
+Event: 3.630 Thread 0x000000001915c800 3269       3       sun.nio.fs.WindowsPath::checkRead (17 bytes)
+Event: 3.631 Thread 0x000000001915c800 nmethod 3269 0x00000000037a2e90 code [0x00000000037a3060, 0x00000000037a3768]
+Event: 3.644 Thread 0x000000001915a800 nmethod 3095 0x000000000379a8d0 code [0x000000000379aa80, 0x000000000379b4b8]
+Event: 3.644 Thread 0x000000001915a800 3009       4       java.nio.CharBuffer::charAt (16 bytes)
+Event: 3.645 Thread 0x000000001915c800 3271       3       sun.nio.fs.WindowsNativeDispatcher$FirstFile::handle (5 bytes)
+Event: 3.645 Thread 0x000000001915c800 nmethod 3271 0x00000000037a2b90 code [0x00000000037a2ce0, 0x00000000037a2e30]
+Event: 3.646 Thread 0x000000001915a800 nmethod 3009 0x000000000379bf50 code [0x000000000379c0a0, 0x000000000379c1d8]
+Event: 3.646 Thread 0x000000001915a800 3010       4       java.nio.HeapCharBuffer::get (15 bytes)
+Event: 3.647 Thread 0x000000001915a800 nmethod 3010 0x000000000379bc10 code [0x000000000379bd60, 0x000000000379be38]
+Event: 3.648 Thread 0x000000001915a800 3093       4       java.util.zip.ZipEntry::setExtra0 (360 bytes)
+Event: 3.650 Thread 0x000000001915a800 nmethod 3093 0x00000000037a2810 code [0x00000000037a2940, 0x00000000037a2ad8]
+Event: 3.650 Thread 0x000000001915a800 3097       4       java.util.zip.ZipEntry::<init> (43 bytes)
+Event: 3.651 Thread 0x000000001915a800 nmethod 3097 0x00000000037a0890 code [0x00000000037a09c0, 0x00000000037a0a58]
+Event: 3.651 Thread 0x000000001915a800 3099       4       java.util.zip.ZipFile$ZipEntryIterator::hasMoreElements (5 bytes)
+Event: 3.652 Thread 0x000000001915c800 3272       1       org.eclipse.core.filesystem.provider.FileInfo::getName (5 bytes)
+Event: 3.652 Thread 0x000000001915c800 nmethod 3272 0x00000000037a2550 code [0x00000000037a26a0, 0x00000000037a27b0]
+Event: 3.652 Thread 0x000000001915c800 3273       3       org.eclipse.core.runtime.Path::hasTrailingSeparator (13 bytes)
+Event: 3.653 Thread 0x000000001915c800 nmethod 3273 0x00000000037a21d0 code [0x00000000037a2320, 0x00000000037a24d0]
+Event: 3.653 Thread 0x000000001915c800 3274       3       org.eclipse.core.internal.resources.Resource::getResourceInfo (14 bytes)
+Event: 3.653 Thread 0x000000001915c800 nmethod 3274 0x000000000379d750 code [0x000000000379d8c0, 0x000000000379db08]
+Event: 3.653 Thread 0x000000001915a800 nmethod 3099 0x0000000003794d50 code [0x0000000003794ea0, 0x00000000037951b8]
+Event: 3.653 Thread 0x000000001915a800 3100   !   4       java.util.zip.ZipFile$ZipEntryIterator::hasNext (41 bytes)
+Event: 3.654 Thread 0x000000001915b000 nmethod 3096 0x0000000003796650 code [0x0000000003796880, 0x0000000003797748]
+Event: 3.654 Thread 0x000000001915b000 3101       4       java.util.zip.ZipFile$ZipEntryIterator::nextElement (5 bytes)
+Event: 3.655 Thread 0x000000001915a800 nmethod 3100 0x0000000003798890 code [0x00000000037989e0, 0x0000000003798cf8]
+Event: 3.656 Thread 0x000000001915a800 3103   !   4       java.util.zip.ZipFile$ZipEntryIterator::next (212 bytes)
+Event: 3.656 Thread 0x000000001915c800 3275       3       sun.nio.fs.WindowsFileAttributes::isDirectory (25 bytes)
+Event: 3.656 Thread 0x000000001915c800 nmethod 3275 0x00000000037982d0 code [0x0000000003798440, 0x0000000003798710]
+Event: 3.657 Thread 0x000000001915c800 3276       3       org.eclipse.core.runtime.Path::isAbsolute (13 bytes)
+Event: 3.657 Thread 0x000000001915c800 nmethod 3276 0x00000000037a1dd0 code [0x00000000037a1f20, 0x00000000037a20d0]
+Event: 3.659 Thread 0x000000001915c800 3277  s    3       org.eclipse.core.internal.watson.ElementTree::includes (36 bytes)
+Event: 3.659 Thread 0x000000001915b000 nmethod 3101 0x0000000003794110 code [0x0000000003794280, 0x00000000037947a8]
+Event: 3.659 Thread 0x000000001915b000 3104       4       java.util.zip.ZipEntry::isDirectory (10 bytes)
+Event: 3.659 Thread 0x000000001915c800 nmethod 3277 0x0000000003795f50 code [0x00000000037960c0, 0x00000000037964c8]
+Event: 3.660 Thread 0x000000001915a800 nmethod 3103 0x00000000037953d0 code [0x0000000003795540, 0x0000000003795a68]
+Event: 3.660 Thread 0x000000001915a800 3105       4       org.eclipse.jdt.internal.compiler.impl.CompilerOptions::versionFromJdkLevel (212 bytes)
+Event: 3.661 Thread 0x000000001915b000 nmethod 3104 0x000000000379d410 code [0x000000000379d560, 0x000000000379d638]
+Event: 3.661 Thread 0x000000001915b000 3140       4       org.eclipse.core.internal.registry.ReferenceMap::indexFor (55 bytes)
+Event: 3.661 Thread 0x000000001915b000 nmethod 3140 0x000000000378add0 code [0x000000000378af00, 0x000000000378afb8]
+Event: 3.661 Thread 0x000000001915a800 nmethod 3105 0x000000000379ec50 code [0x000000000379ee20, 0x000000000379eff8]
+Event: 3.661 Thread 0x000000001915b000 3085       4       org.eclipse.jdt.internal.core.util.Util::equalArraysOrNull (72 bytes)
+Event: 3.661 Thread 0x000000001915a800 3086       4       org.eclipse.jdt.internal.compiler.util.Util::isClassFileName (82 bytes)
+Event: 3.663 Thread 0x000000001915c800 3278       3       org.eclipse.core.internal.dtree.DeltaDataTree::lookup (158 bytes)
+Event: 3.664 Thread 0x000000001915c800 nmethod 3278 0x0000000003799290 code [0x00000000037994e0, 0x000000000379a248]
+Event: 3.665 Thread 0x000000001915b000 nmethod 3085 0x00000000037d3250 code [0x00000000037d33a0, 0x00000000037d3618]
+Event: 3.665 Thread 0x000000001915b000 3128       4       org.eclipse.jdt.internal.compiler.classfmt.ClassFileStruct::u1At (16 bytes)
+Event: 3.666 Thread 0x000000001915b000 nmethod 3128 0x0000000003799010 code [0x0000000003799140, 0x00000000037991d8]
+Event: 3.667 Thread 0x000000001915a800 nmethod 3086 0x000000000379ce50 code [0x000000000379cfa0, 0x000000000379d258]
+Event: 3.668 Thread 0x000000001915c800 3279       3       org.eclipse.core.filesystem.provider.FileInfo::setAttribute (100 bytes)
+Event: 3.669 Thread 0x000000001915b000 3280       4       sun.nio.fs.WindowsPathParser::isSlash (18 bytes)
+Event: 3.669 Thread 0x000000001915c800 nmethod 3279 0x000000000379dbd0 code [0x000000000379dde0, 0x000000000379e878]
+Event: 3.669 Thread 0x000000001915c800 3281       3       sun.nio.fs.WindowsPathParser::normalize (233 bytes)
+Event: 3.670 Thread 0x000000001915b000 nmethod 3280 0x00000000037d3050 code [0x00000000037d3180, 0x00000000037d31d8]
+Event: 3.672 Thread 0x000000001915a800 3282       4       sun.nio.fs.WindowsPathParser::isInvalidPathChar (22 bytes)
+Event: 3.674 Thread 0x000000001915a800 nmethod 3282 0x000000000379cb50 code [0x000000000379cc80, 0x000000000379cd78]
+Event: 3.675 Thread 0x000000001915c800 nmethod 3281 0x00000000037d7fd0 code [0x00000000037d8580, 0x00000000037dc548]
+Event: 3.679 Thread 0x000000001915c800 3283       1       org.eclipse.core.internal.dtree.NoDataDeltaNode::isDelta (2 bytes)
+Event: 3.679 Thread 0x000000001915c800 nmethod 3283 0x000000000379c890 code [0x000000000379c9e0, 0x000000000379caf0]
+Event: 3.679 Thread 0x000000001915c800 3284       3       org.eclipse.core.runtime.Path::isEmpty (23 bytes)
+Event: 3.680 Thread 0x000000001915c800 nmethod 3284 0x000000000379c490 code [0x000000000379c5e0, 0x000000000379c7d0]
+Event: 3.688 Thread 0x000000001915c800 3285       3       java.nio.file.FileSystems::getDefault (4 bytes)
+Event: 3.688 Thread 0x000000001915c800 nmethod 3285 0x00000000037d7cd0 code [0x00000000037d7e20, 0x00000000037d7f50]
+Event: 3.691 Thread 0x000000001915c800 3286       3       org.eclipse.core.internal.resources.ResourceInfo::isSet (14 bytes)
+Event: 3.691 Thread 0x000000001915c800 nmethod 3286 0x00000000037d7950 code [0x00000000037d7aa0, 0x00000000037d7c50]
+Event: 3.696 Thread 0x000000001915c800 3287       3       org.eclipse.core.filesystem.provider.FileInfo::isSet (16 bytes)
+Event: 3.697 Thread 0x000000001915c800 nmethod 3287 0x00000000037d75d0 code [0x00000000037d7720, 0x00000000037d78d0]
+Event: 3.697 Thread 0x000000001915c800 3288       1       org.eclipse.core.internal.resources.ResourceInfo::getFileStoreRoot (5 bytes)
+Event: 3.697 Thread 0x000000001915c800 nmethod 3288 0x00000000037d7310 code [0x00000000037d7460, 0x00000000037d7570]
+Event: 3.698 Thread 0x000000001915c800 3289       3       org.eclipse.core.internal.resources.Resource::getFlags (13 bytes)
+Event: 3.699 Thread 0x000000001915c800 nmethod 3289 0x00000000037d6e90 code [0x00000000037d7000, 0x00000000037d7250]
+Event: 3.699 Thread 0x000000001915c800 3290   !   3       org.eclipse.core.internal.dtree.DataTreeLookup::newLookup (68 bytes)
+Event: 3.699 Thread 0x000000001915c800 nmethod 3290 0x00000000037d6690 code [0x00000000037d6800, 0x00000000037d6c30]
+Event: 3.699 Thread 0x000000001915c800 3291       3       org.eclipse.core.internal.dtree.AbstractDataTreeNode::<init> (34 bytes)
+Event: 3.700 Thread 0x000000001915c800 nmethod 3291 0x00000000037d60d0 code [0x00000000037d6240, 0x00000000037d65b0]
+Event: 3.702 Thread 0x000000001915c800 3292   !   3       sun.nio.fs.WindowsPath::getPathForWin32Calls (138 bytes)
+Event: 3.704 Thread 0x000000001915c800 nmethod 3292 0x00000000037d4410 code [0x00000000037d46a0, 0x00000000037d58c8]
+Event: 3.704 Thread 0x000000001915c800 3293       3       sun.nio.fs.Util::followLinks (66 bytes)
+Event: 3.705 Thread 0x000000001915c800 nmethod 3293 0x00000000037d3cd0 code [0x00000000037d3e60, 0x00000000037d4218]
+Event: 3.705 Thread 0x000000001915c800 3294       3       sun.nio.fs.NativeBuffers::getNativeBuffer (21 bytes)
+Event: 3.705 Thread 0x000000001915c800 nmethod 3294 0x00000000037dee10 code [0x00000000037defa0, 0x00000000037df338]
+Event: 3.717 Thread 0x000000001915c800 3295       3       org.eclipse.core.filesystem.provider.FileInfo::compareTo (9 bytes)
+Event: 3.717 Thread 0x000000001915c800 nmethod 3295 0x00000000037df490 code [0x00000000037df620, 0x00000000037dfa08]
+Event: 3.717 Thread 0x000000001915c800 3296       3       org.eclipse.core.filesystem.provider.FileInfo::compareTo (14 bytes)
+Event: 3.718 Thread 0x000000001915c800 nmethod 3296 0x00000000037d3790 code [0x00000000037d3900, 0x00000000037d3b68]
+Event: 3.718 Thread 0x000000001915c800 3297       1       org.eclipse.core.internal.localstore.UnifiedTreeNode::getResource (5 bytes)
+Event: 3.718 Thread 0x000000001915c800 nmethod 3297 0x00000000037dfb90 code [0x00000000037dfce0, 0x00000000037dfdf0]
+Event: 3.721 Thread 0x000000001915c800 3298       1       org.eclipse.core.internal.localstore.UnifiedTreeNode::getFirstChild (5 bytes)
+Event: 3.721 Thread 0x000000001915c800 nmethod 3298 0x00000000037dfe50 code [0x00000000037dffa0, 0x00000000037e00b0]
+Event: 3.721 Thread 0x000000001915c800 3299       3       org.eclipse.core.runtime.Path::makeAbsolute (69 bytes)
+Event: 3.722 Thread 0x000000001915c800 nmethod 3299 0x0000000002dd13d0 code [0x0000000002dd15c0, 0x0000000002dd1e38]
+Event: 3.722 Thread 0x000000001915c800 3302       3       org.eclipse.core.internal.dtree.DeltaDataTree::lookup (158 bytes)
+Event: 3.724 Thread 0x000000001915c800 nmethod 3302 0x0000000002df6910 code [0x0000000002df6b40, 0x0000000002df7778]
+Event: 3.724 Thread 0x000000001915c800 3300       1       org.eclipse.core.internal.resources.File::getType (2 bytes)
+Event: 3.724 Thread 0x000000001915c800 nmethod 3300 0x0000000002ddb250 code [0x0000000002ddb3a0, 0x0000000002ddb4b0]
+Event: 3.725 Thread 0x000000001915c800 3301       1       org.eclipse.core.internal.resources.Workspace::getFileSystemManager (5 bytes)
+Event: 3.725 Thread 0x000000001915c800 nmethod 3301 0x0000000002decb50 code [0x0000000002decca0, 0x0000000002decdb0]
+Event: 3.725 Thread 0x000000001915c800 3304       3       sun.nio.fs.WindowsPath::getFileName (87 bytes)
+Event: 3.726 Thread 0x000000001915c800 nmethod 3304 0x0000000002db2bd0 code [0x0000000002db2dc0, 0x0000000002db39f8]
+Event: 3.727 Thread 0x000000001915c800 3303       1       org.eclipse.core.internal.dtree.AbstractDataTreeNode::isDeleted (2 bytes)
+Event: 3.727 Thread 0x000000001915c800 nmethod 3303 0x0000000002e40d50 code [0x0000000002e40ea0, 0x0000000002e40fb0]
+Event: 3.727 Thread 0x000000001915c800 3305       1       org.eclipse.core.internal.filesystem.local.nio.DosHandler::getSupportedAttributes (3 bytes)
+Event: 3.728 Thread 0x000000001915c800 nmethod 3305 0x0000000002db16d0 code [0x0000000002db1820, 0x0000000002db1930]
+Event: 3.733 Thread 0x000000001915c800 3306       3       sun.nio.fs.WindowsPath::toWindowsPath (32 bytes)
+Event: 3.734 Thread 0x000000001915c800 nmethod 3306 0x0000000002de8110 code [0x0000000002de82a0, 0x0000000002de8758]
+Event: 3.738 Thread 0x000000001915c800 3307       1       org.eclipse.core.internal.dtree.AbstractDataTreeNode::hasData (2 bytes)
+Event: 3.738 Thread 0x000000001915c800 nmethod 3307 0x0000000002daf8d0 code [0x0000000002dafa20, 0x0000000002dafb30]
+Event: 3.738 Thread 0x000000001915c800 3308       1       org.eclipse.core.runtime.NullProgressMonitor::isCanceled (5 bytes)
+Event: 3.738 Thread 0x000000001915c800 nmethod 3308 0x0000000002e14690 code [0x0000000002e147e0, 0x0000000002e148f0]
+Event: 3.739 Thread 0x000000001915c800 3309       3       org.eclipse.core.internal.filesystem.local.LocalFile::<init> (18 bytes)
+Event: 3.739 Thread 0x000000001915c800 nmethod 3309 0x0000000002e1bed0 code [0x0000000002e1c060, 0x0000000002e1c448]
+Event: 3.740 Thread 0x000000001915c800 3310       1       org.eclipse.core.internal.dtree.AbstractDataTree::isImmutable (5 bytes)
+Event: 3.740 Thread 0x000000001915c800 nmethod 3310 0x0000000002db4250 code [0x0000000002db43a0, 0x0000000002db44b0]
+Event: 3.740 Thread 0x000000001915c800 3312       3       org.eclipse.core.internal.resources.Resource::exists (24 bytes)
+Event: 3.741 Thread 0x000000001915c800 nmethod 3312 0x0000000002da2410 code [0x0000000002da2580, 0x0000000002da2928]
+Event: 3.741 Thread 0x000000001915c800 3311       1       org.eclipse.core.internal.localstore.UnifiedTreeNode::existsInWorkspace (5 bytes)
+Event: 3.741 Thread 0x000000001915c800 nmethod 3311 0x0000000002e87b10 code [0x0000000002e87c60, 0x0000000002e87d70]
+Event: 3.742 Thread 0x000000001915c800 3313       1       org.eclipse.core.internal.resources.Folder::getType (2 bytes)
+Event: 3.742 Thread 0x000000001915c800 nmethod 3313 0x0000000002dddd10 code [0x0000000002ddde60, 0x0000000002dddf70]
+
+GC Heap History (10 events):
+Event: 0.998 GC heap before
+{Heap before GC invocations=0 (full 0):
+ garbage-first heap   total 114688K, used 24576K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 24 young (24576K), 0 survivors (0K)
+ Metaspace       used 8654K, capacity 8832K, committed 9088K, reserved 1056768K
+  class space    used 823K, capacity 857K, committed 896K, reserved 1048576K
+Event: 1.006 GC heap after
+Heap after GC invocations=1 (full 0):
+ garbage-first heap   total 114688K, used 6071K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 3 young (3072K), 3 survivors (3072K)
+ Metaspace       used 8654K, capacity 8832K, committed 9088K, reserved 1056768K
+  class space    used 823K, capacity 857K, committed 896K, reserved 1048576K
+}
+Event: 1.675 GC heap before
+{Heap before GC invocations=1 (full 0):
+ garbage-first heap   total 114688K, used 36791K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 33 young (33792K), 3 survivors (3072K)
+ Metaspace       used 18290K, capacity 19380K, committed 19584K, reserved 1067008K
+  class space    used 1694K, capacity 2063K, committed 2176K, reserved 1048576K
+Event: 1.688 GC heap after
+Heap after GC invocations=2 (full 0):
+ garbage-first heap   total 114688K, used 17636K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 5 young (5120K), 5 survivors (5120K)
+ Metaspace       used 18290K, capacity 19380K, committed 19584K, reserved 1067008K
+  class space    used 1694K, capacity 2063K, committed 2176K, reserved 1048576K
+}
+Event: 1.815 GC heap before
+{Heap before GC invocations=2 (full 0):
+ garbage-first heap   total 114688K, used 25828K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 14 young (14336K), 5 survivors (5120K)
+ Metaspace       used 20181K, capacity 21190K, committed 21296K, reserved 1069056K
+  class space    used 1953K, capacity 2324K, committed 2352K, reserved 1048576K
+Event: 1.820 GC heap after
+Heap after GC invocations=3 (full 0):
+ garbage-first heap   total 114688K, used 18629K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 6 young (6144K), 6 survivors (6144K)
+ Metaspace       used 20181K, capacity 21190K, committed 21296K, reserved 1069056K
+  class space    used 1953K, capacity 2324K, committed 2352K, reserved 1048576K
+}
+Event: 2.591 GC heap before
+{Heap before GC invocations=4 (full 0):
+ garbage-first heap   total 114688K, used 75745K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 67 young (68608K), 6 survivors (6144K)
+ Metaspace       used 25693K, capacity 26946K, committed 27184K, reserved 1073152K
+  class space    used 2656K, capacity 3067K, committed 3120K, reserved 1048576K
+Event: 2.601 GC heap after
+Heap after GC invocations=5 (full 0):
+ garbage-first heap   total 114688K, used 22207K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 9 young (9216K), 9 survivors (9216K)
+ Metaspace       used 25693K, capacity 26946K, committed 27184K, reserved 1073152K
+  class space    used 2656K, capacity 3067K, committed 3120K, reserved 1048576K
+}
+Event: 3.483 GC heap before
+{Heap before GC invocations=5 (full 0):
+ garbage-first heap   total 114688K, used 80575K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 67 young (68608K), 9 survivors (9216K)
+ Metaspace       used 33893K, capacity 35872K, committed 35920K, reserved 1081344K
+  class space    used 3570K, capacity 4266K, committed 4272K, reserved 1048576K
+Event: 3.503 GC heap after
+Heap after GC invocations=6 (full 0):
+ garbage-first heap   total 114688K, used 35830K [0x00000000c0000000, 0x00000000c0100380, 0x0000000100000000)
+  region size 1024K, 9 young (9216K), 9 survivors (9216K)
+ Metaspace       used 33893K, capacity 35872K, committed 35920K, reserved 1081344K
+  class space    used 3570K, capacity 4266K, committed 4272K, reserved 1048576K
+}
+
+Deoptimization events (77 events):
+Event: 0.709 Thread 0x0000000002a9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e613f4 method=java.util.HashMap.resize()[Ljava/util/HashMap$Node; @ 56
+Event: 0.722 Thread 0x0000000002a9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e6dd10 method=java.lang.StringCoding.decode(Ljava/lang/String;[BII)[C @ 38
+Event: 0.781 Thread 0x0000000002a9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002ea7e2c method=java.io.BufferedInputStream.read()I @ 8
+Event: 0.839 Thread 0x0000000002a9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e6c970 method=java.lang.StringCoding.decode(Ljava/lang/String;[BII)[C @ 38
+Event: 0.927 Thread 0x0000000002a9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002eb56b4 method=java.lang.StringCoding.decode(Ljava/lang/String;[BII)[C @ 38
+Event: 0.941 Thread 0x0000000002a9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e45d44 method=java.lang.ThreadLocal$ThreadLocalMap.getEntry(Ljava/lang/ThreadLocal;)Ljava/lang/ThreadLocal$ThreadLocalMap$Entry; @ 29
+Event: 0.941 Thread 0x0000000002a9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e56b1c method=java.lang.ThreadLocal$ThreadLocalMap.getEntry(Ljava/lang/ThreadLocal;)Ljava/lang/ThreadLocal$ThreadLocalMap$Entry; @ 29
+Event: 1.016 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e6a3a4 method=java.lang.ref.SoftReference.get()Ljava/lang/Object; @ 17
+Event: 1.088 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ec9954 method=java.io.DataInputStream.readInt()I @ 4
+Event: 1.089 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ec9954 method=java.io.DataInputStream.readInt()I @ 4
+Event: 1.089 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ec9954 method=java.io.DataInputStream.readInt()I @ 4
+Event: 1.089 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ec9954 method=java.io.DataInputStream.readInt()I @ 4
+Event: 1.089 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ec4e38 method=java.io.DataInputStream.readByte()B @ 4
+Event: 1.089 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ee8914 method=java.io.DataInputStream.readFully([BII)V @ 34
+Event: 1.090 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ec4e38 method=java.io.DataInputStream.readByte()B @ 4
+Event: 1.090 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ee8914 method=java.io.DataInputStream.readFully([BII)V @ 34
+Event: 1.091 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ec4e38 method=java.io.DataInputStream.readByte()B @ 4
+Event: 1.091 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ec4e38 method=java.io.DataInputStream.readByte()B @ 4
+Event: 1.091 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ee8914 method=java.io.DataInputStream.readFully([BII)V @ 34
+Event: 1.091 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000002ee8914 method=java.io.DataInputStream.readFully([BII)V @ 34
+Event: 1.171 Thread 0x000000001ade7000 Uncommon trap: reason=predicate action=maybe_recompile pc=0x0000000002f9d7a4 method=java.lang.String.regionMatches(ZILjava/lang/String;II)Z @ 63
+Event: 1.193 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000300a4ac method=java.io.DataInputStream.readByte()B @ 4
+Event: 1.193 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000301ca28 method=java.io.DataInputStream.readInt()I @ 4
+Event: 1.193 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000300a4ac method=java.io.DataInputStream.readByte()B @ 4
+Event: 1.193 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000300a4ac method=java.io.DataInputStream.readByte()B @ 4
+Event: 1.193 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000301ca28 method=java.io.DataInputStream.readInt()I @ 4
+Event: 1.193 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000300a4ac method=java.io.DataInputStream.readByte()B @ 4
+Event: 1.193 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000301ca28 method=java.io.DataInputStream.readInt()I @ 4
+Event: 1.193 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x000000000301ca28 method=java.io.DataInputStream.readInt()I @ 4
+Event: 1.229 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003059d4c method=java.io.WinNTFileSystem.normalize(Ljava/lang/String;II)Ljava/lang/String; @ 103
+Event: 1.330 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000003098b58 method=java.io.DataInputStream.readUnsignedShort()I @ 4
+Event: 1.331 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000003098b58 method=java.io.DataInputStream.readUnsignedShort()I @ 4
+Event: 1.331 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000003098b58 method=java.io.DataInputStream.readUnsignedShort()I @ 4
+Event: 1.332 Thread 0x000000001ade7000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x0000000003098b58 method=java.io.DataInputStream.readUnsignedShort()I @ 4
+Event: 1.585 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000030e025c method=java.util.Properties.loadConvert([CII[C)Ljava/lang/String; @ 417
+Event: 1.608 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000031b30dc method=java.util.Properties$LineReader.readLine()I @ 180
+Event: 1.616 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000319c908 method=org.eclipse.core.runtime.Path.computeLength()I @ 50
+Event: 1.626 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000031c2368 method=java.util.Properties$LineReader.readLine()I @ 328
+Event: 1.652 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f5c3b0 method=java.util.jar.Manifest$FastInputStream.peek()B @ 23
+Event: 1.753 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e6a7f0 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 62
+Event: 1.753 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e72de4 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 94
+Event: 1.756 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e67640 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 94
+Event: 1.773 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002ea9500 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 62
+Event: 1.849 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000031fea14 method=java.nio.charset.CoderResult.isOverflow()Z @ 5
+Event: 1.877 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003164ab4 method=java.util.ArrayList.indexOf(Ljava/lang/Object;)I @ 1
+Event: 1.881 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000032648ac method=java.nio.charset.CoderResult.isOverflow()Z @ 5
+Event: 1.899 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000326e868 method=sun.nio.cs.StreamDecoder.implRead([CII)I @ 197
+Event: 1.902 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000327b57c method=sun.nio.cs.StreamDecoder.implRead([CII)I @ 71
+Event: 1.905 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003277938 method=sun.nio.cs.StreamDecoder.implRead([CII)I @ 197
+Event: 1.915 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000326945c method=org.codehaus.plexus.util.xml.pull.MXParser.nextImpl()I @ 91
+Event: 1.973 Thread 0x000000001ade7000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000032c134c method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 129
+Event: 2.014 Thread 0x000000001ade7000 Uncommon trap: reason=range_check action=make_not_entrant pc=0x00000000032e0960 method=sun.reflect.generics.parser.SignatureParser.current()C @ 34
+Event: 2.475 Thread 0x000000001ade7000 Uncommon trap: reason=predicate action=maybe_recompile pc=0x0000000003467f98 method=java.util.TimSort.binarySort([Ljava/lang/Object;IIILjava/util/Comparator;)V @ 37
+Event: 2.490 Thread 0x000000001ade7000 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000003478160 method=java.util.TimSort.binarySort([Ljava/lang/Object;IIILjava/util/Comparator;)V @ 215
+Event: 2.490 Thread 0x000000001ade7000 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000003478304 method=java.util.TimSort.binarySort([Ljava/lang/Object;IIILjava/util/Comparator;)V @ 183
+Event: 2.490 Thread 0x000000001ade7000 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000003478230 method=java.util.TimSort.binarySort([Ljava/lang/Object;IIILjava/util/Comparator;)V @ 193
+Event: 2.491 Thread 0x000000001ade7000 Uncommon trap: reason=array_check action=maybe_recompile pc=0x0000000003478304 method=java.util.TimSort.binarySort([Ljava/lang/Object;IIILjava/util/Comparator;)V @ 183
+Event: 2.749 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x000000000348d250 method=java.util.AbstractList$Itr.hasNext()Z @ 8
+Event: 2.749 Thread 0x000000001ade7000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00000000034c4704 method=java.util.AbstractList$Itr.next()Ljava/lang/Object; @ 14
+Event: 2.766 Thread 0x000000001ade7000 Uncommon trap: reason=predicate action=maybe_recompile pc=0x0000000003433a18 method=java.nio.charset.CharsetDecoder.decode(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;Z)Ljava/nio/charset/CoderResult; @ 54
+Event: 2.767 Thread 0x000000001ade7000 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00000000034094e4 method=java.nio.charset.CharsetDecoder.decode(Ljava/nio/ByteBuffer;Ljava/nio/CharBuffer;Z)Ljava/nio/charset/CoderResult; @ 54
+Event: 2.851 Thread 0x000000001ade7000 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00000000035d40a4 method=java.util.TimSort.reverseRange([Ljava/lang/Object;II)V @ 8
+Event: 2.948 Thread 0x0000000002a9e000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000031c1438 method=java.util.Properties.loadConvert([CII[C)Ljava/lang/String; @ 431
+Event: 3.104 Thread 0x000000001da7f000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000003485f9c method=java.lang.reflect.Field.getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation; @ 19
+Event: 3.128 Thread 0x000000001b5af800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000034f07d8 method=java.util.regex.ASCII.isType(II)Z @ 6
+Event: 3.133 Thread 0x000000001b5af800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000003485f9c method=java.lang.reflect.Field.getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation; @ 19
+Event: 3.134 Thread 0x000000001b5af800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000003485f9c method=java.lang.reflect.Field.getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation; @ 19
+Event: 3.151 Thread 0x000000001da7f000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000003485f9c method=java.lang.reflect.Field.getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation; @ 19
+Event: 3.152 Thread 0x000000001da7f000 Uncommon trap: reason=speculate_class_check action=maybe_recompile pc=0x0000000003669b60 method=java.util.HashMap.removeNode(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/util/HashMap$Node; @ 283
+Event: 3.183 Thread 0x000000001b6eb000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000354cb34 method=java.util.concurrent.locks.ReentrantLock$Sync.nonfairTryAcquire(I)Z @ 34
+Event: 3.183 Thread 0x000000001b6eb000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000032392f4 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 14
+Event: 3.183 Thread 0x000000001b6eb000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000031e27d8 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 14
+Event: 3.184 Thread 0x000000001b5af800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000000000320f3e0 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 14
+Event: 3.186 Thread 0x000000001b5af800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000032050f8 method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 14
+Event: 3.206 Thread 0x000000001b5af800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00000000033bd5bc method=java.util.concurrent.locks.AbstractQueuedSynchronizer.release(I)Z @ 14
+Event: 3.238 Thread 0x000000001b5af800 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000003669c08 method=java.util.HashMap.removeNode(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/util/HashMap$Node; @ 68
+Event: 3.440 Thread 0x000000001b5af800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000003196b60 method=org.eclipse.jdt.core.compiler.CharOperation.equals([C[C)Z @ 21
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (65 events):
+Event: 0.053 Thread 0x0000000002a9e000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000c6f07cb0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\sh
+Event: 0.053 Thread 0x0000000002a9e000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000c6f07f98) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.c
+Event: 0.224 Thread 0x0000000002a9e000 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/c/Handler> (0x00000000c6d23180) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.229 Thread 0x0000000002a9e000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c6d3fd10) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 0.229 Thread 0x0000000002a9e000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c6d40df8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 0.230 Thread 0x0000000002a9e000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c6d41d00) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 0.230 Thread 0x0000000002a9e000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c6d42c80) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 0.238 Thread 0x0000000002a9e000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c6d5df50) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 0.651 Thread 0x0000000002a9e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000c69f4628) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.651 Thread 0x0000000002a9e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000c69f4838) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.651 Thread 0x0000000002a9e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000c69f7b30) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.651 Thread 0x0000000002a9e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000c69f7d40) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.651 Thread 0x0000000002a9e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000c69f8f98) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.651 Thread 0x0000000002a9e000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000c69f91a8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jvm.cpp, line 1512]
+Event: 0.677 Thread 0x0000000002a9e000 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/c/Handler> (0x00000000c65a27f8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.677 Thread 0x0000000002a9e000 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/d/Handler> (0x00000000c65a3ff8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.678 Thread 0x0000000002a9e000 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/c/Handler> (0x00000000c65a5748) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.684 Thread 0x0000000002a9e000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c65ce550) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 0.996 Thread 0x0000000002a9e000 Exception <a 'java/lang/UnsatisfiedLinkError': org.eclipse.equinox.launcher.JNIBridge._update_splash()V> (0x00000000c587a970) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\nativeLookup.cpp, line 378]
+Event: 1.084 Thread 0x000000001ade7000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c6deb398) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 1.158 Thread 0x000000001ade7000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000c6b5e858) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 1.160 Thread 0x000000001ade7000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000c6b6c368) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 1.307 Thread 0x000000001ade7000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c6755008) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 1.441 Thread 0x000000001ade7000 Exception <a 'java/io/FileNotFoundException'> (0x00000000c6355a18) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 1.631 Thread 0x000000001ade7000 Exception <a 'java/lang/NoClassDefFoundError': org/slf4j/impl/StaticLoggerBinder> (0x00000000c51ec780) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 199]
+Event: 1.795 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000c68c0e60) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 1.800 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000c68f0198) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 1.809 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000c673e1d8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 1.934 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000c5f10548) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 1.935 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000c5f122c0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 1.972 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000c5ec14c8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 1.978 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000c5d07a00) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 619]
+Event: 2.014 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 85> (0x00000000c590a3e0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 371]
+Event: 2.014 Thread 0x000000001ade7000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 40> (0x00000000c590b448) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\interpreter\interpreterRuntime.cpp, line 371]
+Event: 2.659 Thread 0x000000001ade7000 Exception <a 'java/lang/NoClassDefFoundError': com/google/inject/servlet/ServletModuleTargetVisitor> (0x00000000c6903ce8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 199]
+Event: 2.659 Thread 0x000000001ade7000 Exception <a 'java/lang/NoClassDefFoundError': javax/annotation/Priority> (0x00000000c690ab00) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 199]
+Event: 3.146 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c53a60d8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.156 Thread 0x000000001b5af800 Exception <a 'java/io/FileNotFoundException'> (0x00000000c5228d98) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.165 Thread 0x000000001b5af800 Exception <a 'java/io/FileNotFoundException'> (0x00000000c52a9da0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.170 Thread 0x000000001b5af800 Exception <a 'java/io/FileNotFoundException'> (0x00000000c52dee38) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.438 Thread 0x000000001b5af800 Exception <a 'java/io/FileNotFoundException'> (0x00000000c39c8990) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.438 Thread 0x000000001b5af800 Exception <a 'java/io/FileNotFoundException'> (0x00000000c39cac68) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.527 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6f6bcc8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.530 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6f6fd40) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.531 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6ff4f00) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.532 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6ff8b38) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.533 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6fffd30) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.534 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e03718) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.536 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e0a430) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.536 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e0f300) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.538 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e176b8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.539 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e1b440) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.540 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e211e0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.558 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e27070) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.582 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e792e0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.583 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e7e3f8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.583 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e81ff8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.584 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e891b8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.587 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e8cad0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.590 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e937b0) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.602 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6e98648) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.604 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6ea0a68) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.606 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6ea47b8) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.608 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6eaa520) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+Event: 3.610 Thread 0x000000001b5af800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000c6eb0378) thrown at [C:\cygwin64\tmp\ojdkbuild\lookaside\java-1.8.0-openjdk\hotspot\src\share\vm\prims\jni.cpp, line 710]
+
+Events (250 events):
+Event: 3.183 Thread 0x000000001b6eb000 DEOPT UNPACKING pc=0x0000000002ce557b sp=0x000000001cd8d880 mode 2
+Event: 3.184 Thread 0x000000001b5af800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x000000000320f3e0
+Event: 3.184 Thread 0x000000001b5af800 DEOPT PACKING pc=0x000000000320f3e0 sp=0x000000001cc8b6a0
+Event: 3.184 Thread 0x000000001b5af800 DEOPT UNPACKING pc=0x0000000002ce557b sp=0x000000001cc8b550 mode 2
+Event: 3.186 Thread 0x000000001b5af800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x00000000032050f8
+Event: 3.186 Thread 0x000000001b5af800 DEOPT PACKING pc=0x00000000032050f8 sp=0x000000001cc8b570
+Event: 3.186 Thread 0x000000001b5af800 DEOPT UNPACKING pc=0x0000000002ce557b sp=0x000000001cc8b4d8 mode 2
+Event: 3.200 Thread 0x000000001dd03000 Thread added: 0x000000001dd03000
+Event: 3.206 Thread 0x000000001b5af800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x00000000033bd5bc
+Event: 3.206 Thread 0x000000001b5af800 DEOPT PACKING pc=0x00000000033bd5bc sp=0x000000001cc8d9e0
+Event: 3.206 Thread 0x000000001b5af800 DEOPT UNPACKING pc=0x0000000002ce557b sp=0x000000001cc8d940 mode 2
+Event: 3.211 Thread 0x000000001b5af800 DEOPT PACKING pc=0x00000000031d1d25 sp=0x000000001cc8e0c0
+Event: 3.211 Thread 0x000000001b5af800 DEOPT UNPACKING pc=0x0000000002ce71d0 sp=0x000000001cc8de30 mode 0
+Event: 3.212 Thread 0x000000001b5af800 DEOPT PACKING pc=0x00000000031d1d25 sp=0x000000001cc8e0c0
+Event: 3.212 Thread 0x000000001b5af800 DEOPT UNPACKING pc=0x0000000002ce71d0 sp=0x000000001cc8de30 mode 0
+Event: 3.213 loading class java/text/MessageFormat$Field
+Event: 3.213 loading class java/text/MessageFormat$Field done
+Event: 3.213 loading class java/io/PrintWriter
+Event: 3.214 loading class java/io/PrintWriter done
+Event: 3.226 loading class sun/net/www/protocol/https/Handler
+Event: 3.227 loading class sun/net/www/protocol/http/Handler
+Event: 3.227 loading class sun/net/www/protocol/http/Handler done
+Event: 3.227 loading class sun/net/www/protocol/https/Handler done
+Event: 3.238 Thread 0x000000001b5af800 Uncommon trap: trap_request=0xffffffde fr.pc=0x0000000003669c08
+Event: 3.238 Thread 0x000000001b5af800 DEOPT PACKING pc=0x0000000003669c08 sp=0x000000001cc8e960
+Event: 3.238 Thread 0x000000001b5af800 DEOPT UNPACKING pc=0x0000000002ce557b sp=0x000000001cc8e878 mode 2
+Event: 3.247 loading class java/util/regex/Pattern$BackRef
+Event: 3.247 loading class java/util/regex/Pattern$BackRef done
+Event: 3.247 loading class java/util/regex/Pattern$GroupCurly
+Event: 3.247 loading class java/util/regex/Pattern$GroupCurly done
+Event: 3.426 loading class org/eclipse/core/resources/IProject
+Event: 3.426 loading class org/eclipse/core/resources/IProject done
+Event: 3.426 loading class org/eclipse/jdt/core/IPackageFragment
+Event: 3.426 loading class org/eclipse/jdt/core/IPackageFragment done
+Event: 3.426 loading class org/eclipse/core/resources/IProject
+Event: 3.426 loading class org/eclipse/core/resources/IProject done
+Event: 3.426 loading class org/eclipse/core/resources/IProject
+Event: 3.426 loading class org/eclipse/core/resources/IProject done
+Event: 3.426 loading class org/eclipse/jdt/core/IPackageFragment
+Event: 3.426 loading class org/eclipse/jdt/core/IPackageFragment done
+Event: 3.426 loading class org/eclipse/core/resources/IProject
+Event: 3.426 loading class org/eclipse/core/resources/IProject done
+Event: 3.427 loading class java/util/stream/ReferencePipeline$7
+Event: 3.427 loading class java/util/stream/ReferencePipeline$7 done
+Event: 3.427 loading class org/eclipse/core/resources/IProject
+Event: 3.427 loading class org/eclipse/core/resources/IProject done
+Event: 3.428 loading class org/eclipse/jdt/core/ICompilationUnit
+Event: 3.428 loading class org/eclipse/jdt/core/ICompilationUnit done
+Event: 3.428 loading class org/eclipse/core/resources/IProject
+Event: 3.428 loading class org/eclipse/core/resources/IProject done
+Event: 3.428 loading class java/util/stream/ReferencePipeline$7$1
+Event: 3.428 loading class java/util/stream/ReferencePipeline$7$1 done
+Event: 3.431 loading class org/eclipse/core/runtime/content/IContentType
+Event: 3.431 loading class org/eclipse/core/runtime/content/IContentType done
+Event: 3.431 loading class org/eclipse/core/runtime/content/IContentType
+Event: 3.431 loading class org/eclipse/core/runtime/content/IContentType done
+Event: 3.432 loading class org/eclipse/core/runtime/content/IContentType
+Event: 3.432 loading class org/eclipse/core/runtime/content/IContentType done
+Event: 3.432 loading class org/eclipse/core/runtime/content/IContentType
+Event: 3.432 loading class org/eclipse/core/runtime/content/IContentType done
+Event: 3.433 loading class org/eclipse/core/runtime/content/IContentType
+Event: 3.433 loading class org/eclipse/core/runtime/content/IContentType done
+Event: 3.433 loading class org/eclipse/core/runtime/content/IContentType
+Event: 3.433 loading class org/eclipse/core/runtime/content/IContentType done
+Event: 3.440 Thread 0x000000001b5af800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x0000000003196b60
+Event: 3.440 Thread 0x000000001b5af800 DEOPT PACKING pc=0x0000000003196b60 sp=0x000000001cc8ecc0
+Event: 3.440 Thread 0x000000001b5af800 DEOPT UNPACKING pc=0x0000000002ce557b sp=0x000000001cc8ec68 mode 2
+Event: 3.483 Executing VM operation: CollectForMetadataAllocation
+Event: 3.504 Executing VM operation: CollectForMetadataAllocation done
+Event: 3.510 loading class java/util/regex/Pattern$Loop
+Event: 3.510 loading class java/util/regex/Pattern$Loop done
+Event: 3.510 loading class java/util/regex/Pattern$Prolog
+Event: 3.510 loading class java/util/regex/Pattern$Prolog done
+Event: 3.510 loading class java/util/regex/Pattern$CharPropertyNames
+Event: 3.510 loading class java/util/regex/Pattern$CharPropertyNames done
+Event: 3.511 loading class java/util/regex/Pattern$CharPropertyNames$1
+Event: 3.511 loading class java/util/regex/Pattern$CharPropertyNames$CharPropertyFactory
+Event: 3.512 loading class java/util/regex/Pattern$CharPropertyNames$CharPropertyFactory done
+Event: 3.512 loading class java/util/regex/Pattern$CharPropertyNames$1 done
+Event: 3.512 loading class java/util/regex/Pattern$CharPropertyNames$2
+Event: 3.512 loading class java/util/regex/Pattern$CharPropertyNames$2 done
+Event: 3.512 loading class java/util/regex/Pattern$CharPropertyNames$5
+Event: 3.512 loading class java/util/regex/Pattern$CharPropertyNames$5 done
+Event: 3.512 loading class java/util/regex/Pattern$CharPropertyNames$3
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$3 done
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$6
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$CloneableProperty
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$CloneableProperty done
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$6 done
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$4
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$4 done
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$7
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$7 done
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$8
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$8 done
+Event: 3.513 loading class java/util/regex/Pattern$CharPropertyNames$9
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$9 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$10
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$10 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$11
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$11 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$12
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$12 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$13
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$13 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$14
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$14 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$15
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$15 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$16
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$16 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$17
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$17 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$18
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$18 done
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$19
+Event: 3.514 loading class java/util/regex/Pattern$CharPropertyNames$19 done
+Event: 3.515 loading class java/util/regex/Pattern$CharPropertyNames$20
+Event: 3.515 loading class java/util/regex/Pattern$CharPropertyNames$20 done
+Event: 3.515 loading class java/util/regex/Pattern$CharPropertyNames$21
+Event: 3.515 loading class java/util/regex/Pattern$CharPropertyNames$21 done
+Event: 3.515 loading class java/util/regex/Pattern$CharPropertyNames$22
+Event: 3.515 loading class java/util/regex/Pattern$CharPropertyNames$22 done
+Event: 3.515 loading class java/util/regex/Pattern$CharPropertyNames$23
+Event: 3.515 loading class java/util/regex/Pattern$CharPropertyNames$23 done
+Event: 3.521 loading class java/util/TreeMap$Values
+Event: 3.521 loading class java/util/TreeMap$Values done
+Event: 3.521 loading class java/util/TreeMap$ValueIterator
+Event: 3.521 loading class java/util/TreeMap$ValueIterator done
+Event: 3.522 loading class java/nio/file/FileVisitOption
+Event: 3.522 loading class java/nio/file/FileVisitOption done
+Event: 3.522 loading class java/nio/file/SimpleFileVisitor
+Event: 3.522 loading class java/nio/file/FileVisitor
+Event: 3.523 loading class java/nio/file/FileVisitor done
+Event: 3.523 loading class java/nio/file/SimpleFileVisitor done
+Event: 3.523 loading class java/nio/file/FileTreeWalker
+Event: 3.523 loading class java/nio/file/FileTreeWalker done
+Event: 3.523 loading class java/util/RegularEnumSet$EnumSetIterator
+Event: 3.523 loading class java/util/RegularEnumSet$EnumSetIterator done
+Event: 3.523 loading class java/nio/file/FileTreeWalker$1
+Event: 3.523 loading class java/nio/file/FileTreeWalker$1 done
+Event: 3.524 loading class java/util/ArrayDeque$DeqIterator
+Event: 3.524 loading class java/util/ArrayDeque$DeqIterator done
+Event: 3.524 loading class java/nio/file/FileTreeWalker$DirectoryNode
+Event: 3.524 loading class java/nio/file/FileTreeWalker$DirectoryNode done
+Event: 3.524 loading class java/nio/file/FileTreeWalker$Event
+Event: 3.524 loading class java/nio/file/FileTreeWalker$Event done
+Event: 3.524 loading class java/nio/file/FileTreeWalker$EventType
+Event: 3.524 loading class java/nio/file/FileTreeWalker$EventType done
+Event: 3.524 loading class java/nio/file/Files$3
+Event: 3.524 loading class java/nio/file/Files$3 done
+Event: 3.525 loading class sun/nio/fs/Globs
+Event: 3.525 loading class sun/nio/fs/Globs done
+Event: 3.525 loading class java/util/regex/Pattern$SliceU
+Event: 3.525 loading class java/util/regex/Pattern$SliceU done
+Event: 3.525 loading class sun/nio/fs/WindowsFileSystem$2
+Event: 3.525 loading class java/nio/file/PathMatcher
+Event: 3.525 loading class java/nio/file/PathMatcher done
+Event: 3.525 loading class sun/nio/fs/WindowsFileSystem$2 done
+Event: 3.526 loading class sun/nio/fs/WindowsPath$1
+Event: 3.526 loading class sun/nio/fs/WindowsPath$1 done
+Event: 3.527 loading class java/nio/file/NoSuchFileException
+Event: 3.527 loading class java/nio/file/FileSystemException
+Event: 3.527 loading class java/nio/file/FileSystemException done
+Event: 3.527 loading class java/nio/file/NoSuchFileException done
+Event: 3.527 loading class java/nio/file/FileVisitResult
+Event: 3.527 loading class java/nio/file/FileVisitResult done
+Event: 3.542 Executing VM operation: CGC_Operation
+Event: 3.554 Executing VM operation: CGC_Operation done
+Event: 3.554 Executing VM operation: CGC_Operation
+Event: 3.555 Executing VM operation: CGC_Operation done
+Event: 3.578 Executing VM operation: Deoptimize
+Event: 3.579 Executing VM operation: Deoptimize done
+Event: 3.612 loading class org/eclipse/core/runtime/SubMonitor
+Event: 3.612 loading class org/eclipse/core/runtime/SubMonitor done
+Event: 3.612 loading class org/eclipse/jdt/ls/core/internal/managers/EclipseProjectImporter
+Event: 3.612 loading class org/eclipse/jdt/ls/core/internal/managers/EclipseProjectImporter done
+Event: 3.718 Executing VM operation: Deoptimize
+Event: 3.719 Executing VM operation: Deoptimize done
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002d9fad0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002da2410
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002da2750
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002da2fd0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002da3650
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dad810
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dadc50
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dae190
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002daeb50
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002daf7d0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002db0550
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002db16d0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002db1f90
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002db2bd0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002db4090
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002db5310
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dbe8d0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dc1490
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dc1790
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dc1e10
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dc2610
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dc4410
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dcab50
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dd12d0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dd8b90
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dd9250
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002ddb250
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002ddc610
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002ddc910
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dddb10
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002ddf250
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002ddf550
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002ddfa10
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002ddff10
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002de2190
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002de2790
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002de2b90
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002de3590
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002de8110
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002de8410
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002decb50
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002ded5d0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002dee710
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002def6d0
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002df6710
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002e00110
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002e06790
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002e08d50
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002e09090
+Event: 3.721 Thread 0x000000001915c800 flushing nmethod 0x0000000002e093d0
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e14590
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e151d0
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e17090
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e17d90
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e18450
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e1b110
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e1bdd0
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e1cd50
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e1f490
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e23e10
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e3a8d0
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e40d50
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e606d0
+Event: 3.722 Thread 0x000000001915c800 flushing nmethod 0x0000000002e6d750
+Event: 3.724 Thread 0x000000001915c800 flushing nmethod 0x0000000002e87950
+Event: 3.724 Thread 0x000000001915c800 flushing nmethod 0x0000000002e8eed0
+Event: 3.724 Thread 0x000000001915c800 flushing nmethod 0x0000000002ea7a90
+Event: 3.724 Thread 0x000000001915c800 flushing nmethod 0x0000000002ea8890
+Event: 3.724 Thread 0x000000001915c800 flushing nmethod 0x0000000002eab990
+Event: 3.724 Thread 0x000000001915c800 flushing nmethod 0x0000000002eabf10
+Event: 3.724 Thread 0x000000001915c800 flushing nmethod 0x0000000002ead390
+
+
+Dynamic libraries:
+0x00007ff7b1050000 - 0x00007ff7b10db000 	D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\bin\java.exe
+0x00007ff8e4d20000 - 0x00007ff8e4f10000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff8e4c20000 - 0x00007ff8e4cd2000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff8e1e50000 - 0x00007ff8e20f3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff8e3680000 - 0x00007ff8e3723000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff8e3270000 - 0x00007ff8e330e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff8e3450000 - 0x00007ff8e34e7000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff8e37d0000 - 0x00007ff8e38f0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff8e30d0000 - 0x00007ff8e3263000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff8e2620000 - 0x00007ff8e2641000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff8e3fe0000 - 0x00007ff8e4006000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff8e2380000 - 0x00007ff8e2514000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff8e1ce0000 - 0x00007ff8e1d7e000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff8e2520000 - 0x00007ff8e261a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff8c9370000 - 0x00007ff8c95f5000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.295_none_e6c3acbd13101292\COMCTL32.dll
+0x00007ff8e48e0000 - 0x00007ff8e4c16000 	C:\WINDOWS\System32\combase.dll
+0x00007ff8e1dd0000 - 0x00007ff8e1e50000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff8e37a0000 - 0x00007ff8e37ce000 	C:\WINDOWS\System32\IMM32.DLL
+0x00000000678e0000 - 0x00000000679b2000 	D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre\bin\msvcr100.dll
+0x00000000699a0000 - 0x000000006a262000 	D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre\bin\server\jvm.dll
+0x00007ff8e3000000 - 0x00007ff8e3008000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff8dfbb0000 - 0x00007ff8dfbd4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff8dab80000 - 0x00007ff8dab8a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff8c5fa0000 - 0x00007ff8c5fa9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff8e3730000 - 0x00007ff8e379f000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff8df730000 - 0x00007ff8df75d000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007ff8e1d80000 - 0x00007ff8e1dca000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ff8c7140000 - 0x00007ff8c714f000 	D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre\bin\verify.dll
+0x00007ff8c7110000 - 0x00007ff8c7139000 	D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre\bin\java.dll
+0x00007ff8c8910000 - 0x00007ff8c8926000 	D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre\bin\zip.dll
+0x00007ff8e38f0000 - 0x00007ff8e3fd2000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff8e4830000 - 0x00007ff8e48d9000 	C:\WINDOWS\System32\shcore.dll
+0x00007ff8e2650000 - 0x00007ff8e2dcc000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ff8e1c00000 - 0x00007ff8e1c1f000 	C:\WINDOWS\System32\profapi.dll
+0x00007ff8e1c40000 - 0x00007ff8e1c8a000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ff8e1bf0000 - 0x00007ff8e1c00000 	C:\WINDOWS\System32\UMPDC.dll
+0x00007ff8e3070000 - 0x00007ff8e30c2000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ff8e1c20000 - 0x00007ff8e1c31000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ff8e21b0000 - 0x00007ff8e21c7000 	C:\WINDOWS\System32\cryptsp.dll
+0x00007ff8e0f00000 - 0x00007ff8e0f33000 	C:\WINDOWS\system32\rsaenh.dll
+0x00007ff8e1cb0000 - 0x00007ff8e1cd6000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff8e1aa0000 - 0x00007ff8e1ac5000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ff8e1560000 - 0x00007ff8e156c000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x00007ff8b5610000 - 0x00007ff8b562a000 	D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre\bin\net.dll
+0x00007ff8d6a50000 - 0x00007ff8d6c26000 	C:\WINDOWS\SYSTEM32\urlmon.dll
+0x00007ff8d67a0000 - 0x00007ff8d6a46000 	C:\WINDOWS\SYSTEM32\iertutil.dll
+0x00007ff8e1390000 - 0x00007ff8e13f7000 	C:\WINDOWS\system32\mswsock.dll
+0x00007ff8e10a0000 - 0x00007ff8e10da000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x00007ff8e3310000 - 0x00007ff8e3318000 	C:\WINDOWS\System32\NSI.dll
+0x00007ff8d7c30000 - 0x00007ff8d7c46000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x00007ff8d7d00000 - 0x00007ff8d7d1c000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+0x00007ff8e10e0000 - 0x00007ff8e11aa000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x00007ff8b5280000 - 0x00007ff8b5291000 	D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre\bin\nio.dll
+0x00007ff8ce200000 - 0x00007ff8ce229000 	C:\Users\80726\.vscode\extensions\redhat.java-0.47.0\server\config_win\org.eclipse.equinox.launcher\org.eclipse.equinox.launcher.win32.win32.x86_64_1.1.1100.v20190715-0945\eclipse_1902.dll
+0x00007ff8ce1e0000 - 0x00007ff8ce1f1000 	C:\Users\80726\.vscode\extensions\redhat.java-0.47.0\server\config_win\org.eclipse.osgi\21\0\.cp\jWinHttp-1.0.0.dll
+0x00007ff8e3520000 - 0x00007ff8e3676000 	C:\WINDOWS\System32\ole32.dll
+0x00007ff8d6020000 - 0x00007ff8d6110000 	C:\WINDOWS\SYSTEM32\WINHTTP.dll
+
+VM Arguments:
+jvm_args: -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dfile.encoding=utf8 -DwatchParentProcess=false -Xverify:none -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication 
+java_command: C:\Users\80726\.vscode\extensions\redhat.java-0.47.0\server\plugins\org.eclipse.equinox.launcher_1.5.500.v20190715-1310.jar -configuration C:\Users\80726\.vscode\extensions\redhat.java-0.47.0\server\config_win -data c:\Users\80726\AppData\Roaming\Code\User\workspaceStorage\0bf0d98879f2111bcf9b4240a38892aa\redhat.java\jdt_ws
+java_class_path (initial): C:\Users\80726\.vscode\extensions\redhat.java-0.47.0\server\plugins\org.eclipse.equinox.launcher_1.5.500.v20190715-1310.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64
+JRE_HOME=D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre
+CLASSPATH=.D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\lib\dt.jar;D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\lib\tools.jar
+PATH=D:\python\Scripts\;D:\python\;D:\Anaconda3;D:\Anaconda3\Library\mingw-w64\bin;D:\Anaconda3\Library\usr\bin;D:\Anaconda3\Library\bin;D:\Anaconda3\Scripts;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\JavaScript\nodejs\;D:\mingw64\bin;C:\WINDOWS\System32\OpenSSH\;C:\Users\80726\AppData\Local\Microsoft\WindowsApps;C:\Users\80726\AppData\Local\atom\bin;C:\Users\80726\AppData\Roaming\npm;D:\PuTTY\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\bin;D:\java-1.8.0-openjdk-1.8.0.201-2.b09.redhat.windows.x86_64\jre\bin;D:\apache-maven-3.6.0\bin;D:\computer_science_class_projects\JAVA\tomcat\bin;D:\LLVM\bin;D:\cmake-3.14.2-win64-x64\bin;D:\cmake-3.14.2-win64-x64;D:\Neo4j\;D:\neo4j-community-3.5.4\;D:\neo4j-community-3.5.4\bin;C:\Users\80726\AppData\Local\Microsoft\WindowsApps;C:\Users\80726\AppData\Roaming\npm;D:\mingw64\bin;D:\SSH;D:\Microsoft VS Code\bin;D:\computer_science_class_projects\Fiddler;C:\Users\80726\AppData\Local\GitHubDesktop\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;
+USERNAME=80726
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 17 Stepping 0, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.86)
+
+CPU:total 8 (initial active 8) (8 cores per cpu, 1 threads per core) family 23 model 17 stepping 0, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 7239248k(1112948k free), swap 9336400k(8368k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.201-b09) for windows-amd64 JRE (1.8.0_201-2-redhat-b09), built on Jan 25 2019 14:31:39 by "build" with MS VC++ 10.0 (VS2010)
+
+time: Sun Aug 18 11:23:06 2019
+timezone: 中国标准时间
+elapsed time: 3 seconds (0d 0h 0m 3s)
+
