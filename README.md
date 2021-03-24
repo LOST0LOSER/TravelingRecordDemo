@@ -4,7 +4,7 @@
 旅游系统课程作业
 
 #### 架構
-采用javaee开发,使用servlet进行通信，使用json-RPC实现通信，前端界面使用vue+JavaScript开发
+采用javaee开发,使用servlet进行通信，使用http-json实现通信，前端界面使用vue+JavaScript开发
 前端采用的是静态资源。
 
 #### 安裝教程
